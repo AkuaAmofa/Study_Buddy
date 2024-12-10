@@ -1,0 +1,55 @@
+[2024-12-10 22:50:12] [DEBUG] POST data received: Array
+(
+    [loginInput] => maame1
+    [password] => Maame@123
+)
+
+[2024-12-10 22:50:12] [DEBUG] Login Input: maame1
+[2024-12-10 22:50:12] [DEBUG] Password received: yes
+[2024-12-10 22:50:12] [DEBUG] Searching by username
+[2024-12-10 22:50:12] [DEBUG] Query executed. Row count: 1
+[2024-12-10 22:50:12] [DEBUG] User found: Array
+(
+    [username] => maame1
+    [email] => maame@asheci.com
+)
+
+[2024-12-10 22:50:12] [INFO] Login successful for user: maame1
+[2024-12-10 22:53:08] [DEBUG] POST data received: Array
+(
+    [loginInput] => maame1
+    [password] => Maame@123
+)
+
+[2024-12-10 22:53:08] [DEBUG] Login Input: maame1
+[2024-12-10 22:53:08] [DEBUG] Password received: yes
+[2024-12-10 22:53:08] [DEBUG] Searching by username
+[2024-12-10 22:53:08] [DEBUG] Query executed. Row count: 1
+[2024-12-10 22:53:08] [DEBUG] User found: Array
+(
+    [username] => maame1
+    [email] => maame@asheci.com
+)
+
+[2024-12-10 22:53:08] [INFO] Login successful for user: maame1
+[2024-12-10 22:55:52] [DEBUG] POST data received: Array
+(
+    [loginInput] => maame1
+    [password] => Maame@123
+)
+
+[2024-12-10 22:55:52] [DEBUG] Login Input: maame1
+[2024-12-10 22:55:52] [DEBUG] Password received: yes
+[2024-12-10 22:55:52] [DEBUG] Searching by username
+[2024-12-10 22:55:52] [DEBUG] Query executed. Row count: 1
+[2024-12-10 22:55:52] [DEBUG] User found: Array
+(
+    [username] => maame1
+    [email] => maame@asheci.com
+)
+
+[2024-12-10 22:55:52] [INFO] Login successful for user: maame1
+[2024-12-10 22:57:23] [ERROR] Error updating profile: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'
+[2024-12-10 23:10:59] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-10 23:11:21] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-10 23:11:34] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number

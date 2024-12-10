@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Buddy - Sign Up</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="signup-section">
+    <h1>Create Your Account</h1>
+    <form action="signup.php" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required>
+    
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required>
+    
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+    
+        <button type="submit">Sign Up</button>
+    </form>
+  </section>
+
+  <script>
+ // Utility function to validate email format
+function validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email format
+    return regex.test(email);
+}
+
+// Utility function to validate password complexity
+function validatePasswordComplexity(password) {
+    const regex = /^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/;
+    return regex.test(password);
+}
+
+// Signup form submission handling
+document.getElementById('signupForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent the form from submitting
+
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    const errorMessage = document.getElementById('errorMessage');
+
+    // Clear any previous error messages
+    errorMessage.textContent = '';
+
+    // Validate fields
+    if (username === '' || email === '' || password === '' || confirmPassword === '') {
+        errorMessage.textContent = 'All fields are required.';
+        return;
+    }
+
+    if (!validateEmail(email)) {
+        errorMessage.textContent = 'Please enter a valid email address.';
+        return;
+    }
+
+    if (!validatePasswordComplexity(password)) {
+        errorMessage.textContent = 'Password must be at least 8 characters long, contain one uppercase letter, and one special character.';
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        errorMessage.textContent = 'Passwords do not match.';
+        return;
+    }
+
+    // If all validations pass, proceed with form submission logic
+    alert('Signup successful!');
+    // Here you can send data to the server using fetch or any preferred method
+});
+  </script>
+</body>
+</html>
