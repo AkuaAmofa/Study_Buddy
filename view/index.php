@@ -15,7 +15,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="login.html" class="btn btn-secondary">Login</a></li>
+        <li><a href="login.php" class="btn btn-secondary">Login</a></li>
       </ul>
     </nav>
   </header>
@@ -27,8 +27,8 @@
         <h1>Welcome to Study Buddy</h1>
         <p class="tagline">Manage your studies effectively and boost productivity!</p>
         <div class="cta-buttons">
-          <a href="signup.html" class="btn btn-primary">Sign Up</a>
-          <a href="login.html" class="btn btn-secondary">Login</a>
+          <a href="signup.php" class="btn btn-primary">Sign Up</a>
+          <a href="login.php" class="btn btn-secondary">Login</a>
         </div>
       </div>
     </section>

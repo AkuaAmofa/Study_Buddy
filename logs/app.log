@@ -53,3 +53,381 @@
 [2024-12-10 23:10:59] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
 [2024-12-10 23:11:21] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
 [2024-12-10 23:11:34] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-10 23:55:43] [INFO] New assignment created: Discrete Assignment 1 by user ID: 10
+[2024-12-11 00:04:21] [INFO] Assignment ID: 1 status updated to: In Progress
+[2024-12-11 00:04:24] [INFO] Assignment ID: 1 status updated to: Completed
+[2024-12-11 00:04:29] [INFO] Assignment ID: 1 status updated to: In Progress
+[2024-12-11 00:04:31] [INFO] Assignment ID: 1 status updated to: Completed
+[2024-12-11 00:04:34] [INFO] Assignment ID: 1 status updated to: Not Started
+[2024-12-11 00:10:00] [INFO] Assignment deleted: Discrete Assignment 1
+[2024-12-11 00:14:53] [INFO] New assignment created: Webtech Final Project by user ID: 10
+[2024-12-11 00:15:11] [INFO] Assignment updated: Webtech Final Project
+[2024-12-11 00:34:50] [DEBUG] POST data received: Array
+(
+    [loginInput] => maame1
+    [password] => Maame@123
+)
+
+[2024-12-11 00:34:50] [DEBUG] Login Input: maame1
+[2024-12-11 00:34:50] [DEBUG] Password received: yes
+[2024-12-11 00:34:50] [DEBUG] Searching by username
+[2024-12-11 00:34:50] [DEBUG] Query executed. Row count: 1
+[2024-12-11 00:34:50] [DEBUG] User found: Array
+(
+    [username] => maame1
+    [email] => maame@asheci.com
+)
+
+[2024-12-11 00:34:50] [INFO] Login successful for user: maame1
+[2024-12-11 00:35:58] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 00:36:07] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 00:37:50] [INFO] New assignment created: project 5 by user ID: 10
+[2024-12-11 00:52:50] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 01:04:20] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 01:27:40] [DEBUG] POST data received: Array
+(
+    [loginInput] => maame1
+    [password] => Maame@123
+)
+
+[2024-12-11 01:27:40] [DEBUG] Login Input: maame1
+[2024-12-11 01:27:40] [DEBUG] Password received: yes
+[2024-12-11 01:27:40] [DEBUG] Searching by username
+[2024-12-11 01:27:40] [DEBUG] Query executed. Row count: 1
+[2024-12-11 01:27:40] [DEBUG] User found: Array
+(
+    [username] => maame1
+    [email] => maame@asheci.com
+)
+
+[2024-12-11 01:27:41] [INFO] Login successful for user: maame1
+[2024-12-11 01:28:05] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 01:28:57] [INFO] Assignment ID: 2 status updated to: Completed
+[2024-12-11 01:29:02] [INFO] Assignment ID: 2 status updated to: In Progress
+[2024-12-11 01:29:06] [INFO] Assignment updated: Webtech Final Project
+[2024-12-11 13:11:04] [DEBUG] POST data received: Array
+(
+    [loginInput] => maame1
+    [password] => Maame@123
+)
+
+[2024-12-11 13:11:04] [DEBUG] Login Input: maame1
+[2024-12-11 13:11:04] [DEBUG] Password received: yes
+[2024-12-11 13:11:04] [DEBUG] Searching by username
+[2024-12-11 13:11:07] [DEBUG] POST data received: Array
+(
+    [loginInput] => maame1
+    [password] => Maame@123
+)
+
+[2024-12-11 13:11:08] [DEBUG] POST data received: Array
+(
+    [loginInput] => maame1
+    [password] => Maame@123
+)
+
+[2024-12-11 13:11:08] [DEBUG] Login Input: maame1
+[2024-12-11 13:11:08] [DEBUG] Password received: yes
+[2024-12-11 13:11:08] [DEBUG] Password received: yes
+[2024-12-11 13:11:08] [DEBUG] Searching by username
+[2024-12-11 13:11:08] [DEBUG] Searching by username
+[2024-12-11 13:11:08] [ERROR] Login error: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+[2024-12-11 13:11:08] [ERROR] Login error: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+[2024-12-11 13:11:08] [ERROR] Login error: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+[2024-12-11 13:11:29] [DEBUG] POST data received: Array
+(
+    [loginInput] => maame1
+    [password] => Maame@123
+)
+
+[2024-12-11 13:11:29] [DEBUG] Login Input: maame1
+[2024-12-11 13:11:29] [DEBUG] Password received: yes
+[2024-12-11 13:11:29] [DEBUG] Searching by username
+[2024-12-11 13:11:29] [DEBUG] Query executed. Row count: 1
+[2024-12-11 13:11:29] [DEBUG] User found: Array
+(
+    [username] => maame1
+    [email] => maame@asheci.com
+)
+
+[2024-12-11 13:11:29] [INFO] Login successful for user: maame1
+[2024-12-11 13:12:13] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 13:12:58] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 13:13:58] [INFO] Assignment updated: project 5
+[2024-12-11 13:14:03] [INFO] Assignment deleted: project 5
+[2024-12-11 13:14:09] [INFO] Assignment ID: 2 status updated to: Completed
+[2024-12-11 14:44:49] [ERROR] Error fetching assignment: Assignment not found or access denied
+[2024-12-11 14:44:51] [ERROR] Error fetching assignment: Assignment not found or access denied
+[2024-12-11 14:44:53] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 14:44:54] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 14:44:55] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 14:44:56] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 14:45:35] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 14:45:36] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 14:48:55] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 14:48:56] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 15:11:21] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 15:11:24] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 15:11:25] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 15:11:26] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 15:11:27] [ERROR] Error fetching dashboard data: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 15:18:32] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:18:34] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 15:18:35] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:18:36] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 15:18:38] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:20:38] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:20:43] [INFO] Assignment ID: 2 status updated to: Not Started
+[2024-12-11 15:20:45] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:20:46] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:20:47] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:20:47] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:20:53] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:20:54] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:20:55] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:20:55] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:20:55] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:20:55] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:20:55] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:20:55] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:22:15] [INFO] New assignment created: Leadership Reflection by user ID: 10
+[2024-12-11 15:22:20] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:22:21] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:22:22] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:22:22] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:22:22] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:22:22] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:48:48] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:48:49] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:48:55] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:59:39] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 15:59:45] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 16:05:57] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 16:05:58] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 16:06:09] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 16:06:12] [ERROR] Error fetching home page data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-11 16:14:26] [DEBUG] Fetching assignments for user ID: 10
+[2024-12-11 16:14:26] [DEBUG] Found 2 assignments
+[2024-12-11 16:14:34] [DEBUG] Fetching assignments for user ID: 10
+[2024-12-11 16:14:34] [DEBUG] Found 2 assignments
+[2024-12-11 16:15:23] [DEBUG] Fetching assignments for user ID: 10
+[2024-12-11 16:15:23] [DEBUG] Found 2 assignments
+[2024-12-11 16:15:24] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 16:15:26] [DEBUG] Fetching assignments for user ID: 10
+[2024-12-11 16:15:26] [DEBUG] Found 2 assignments
+[2024-12-11 16:34:35] [ERROR] Error fetching data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'firstname' in 'field list'
+[2024-12-11 16:40:10] [ERROR] Error fetching data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'firstname' in 'field list'
+[2024-12-11 16:40:10] [DEBUG] First name before display: maame1
+[2024-12-11 16:40:11] [ERROR] Error fetching data: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'firstname' in 'field list'
+[2024-12-11 16:40:11] [DEBUG] First name before display: maame1
+[2024-12-11 16:45:41] [DEBUG] First name fetched: Maame
+[2024-12-11 16:45:41] [DEBUG] First name before display: Maame
+[2024-12-11 20:26:43] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category' in 'field list'
+[2024-12-11 20:26:47] [DEBUG] First name fetched: Maame
+[2024-12-11 20:26:47] [DEBUG] First name before display: Maame
+[2024-12-11 20:26:49] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category' in 'field list'
+[2024-12-11 20:31:07] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category' in 'field list'
+[2024-12-11 20:31:07] [DEBUG] First name fetched: Maame
+[2024-12-11 20:31:07] [DEBUG] First name before display: Maame
+[2024-12-11 20:31:10] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 20:31:12] [DEBUG] First name fetched: Maame
+[2024-12-11 20:31:12] [DEBUG] First name before display: Maame
+[2024-12-11 20:31:13] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category' in 'field list'
+[2024-12-11 20:37:34] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category' in 'field list'
+[2024-12-11 20:37:43] [DEBUG] First name fetched: Maame
+[2024-12-11 20:37:43] [DEBUG] First name before display: Maame
+[2024-12-11 20:37:46] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category' in 'field list'
+[2024-12-11 20:39:10] [ERROR] Error uploading resource: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category' in 'field list'
+[2024-12-11 21:00:02] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category' in 'field list'
+[2024-12-11 21:07:15] [INFO] Resource uploaded successfully: Test
+[2024-12-11 21:07:40] [INFO] Resource downloaded: Test
+[2024-12-11 21:17:18] [INFO] Resource deleted successfully: ID 1
+[2024-12-11 21:22:01] [DEBUG] First name fetched: Maame
+[2024-12-11 21:22:01] [DEBUG] First name before display: Maame
+[2024-12-11 21:22:03] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 21:22:14] [DEBUG] First name fetched: Maame
+[2024-12-11 21:22:14] [DEBUG] First name before display: Maame
+[2024-12-11 21:22:29] [DEBUG] First name fetched: Maame
+[2024-12-11 21:22:29] [DEBUG] First name before display: Maame
+[2024-12-11 21:38:18] [DEBUG] First name fetched: Maame
+[2024-12-11 21:38:18] [DEBUG] First name before display: Maame
+[2024-12-11 21:45:43] [DEBUG] First name fetched: Maame
+[2024-12-11 21:45:43] [DEBUG] First name before display: Maame
+[2024-12-11 21:45:45] [DEBUG] First name fetched: Maame
+[2024-12-11 21:45:45] [DEBUG] First name before display: Maame
+[2024-12-11 21:45:53] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 21:45:56] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 21:48:24] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 21:48:32] [DEBUG] First name fetched: Maame
+[2024-12-11 21:48:32] [DEBUG] First name before display: Maame
+[2024-12-11 21:48:34] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 21:50:11] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 21:50:42] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 21:51:07] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 21:51:30] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 21:51:31] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 21:51:32] [DEBUG] First name fetched: Maame
+[2024-12-11 21:51:32] [DEBUG] First name before display: Maame
+[2024-12-11 21:51:33] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 21:51:53] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 21:51:55] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 21:52:25] [DEBUG] POST data received: Array
+(
+    [loginInput] => maame1
+    [password] => Maame@123
+)
+
+[2024-12-11 21:52:25] [DEBUG] Login Input: maame1
+[2024-12-11 21:52:25] [DEBUG] Password received: yes
+[2024-12-11 21:52:25] [DEBUG] Searching by username
+[2024-12-11 21:52:25] [DEBUG] Query executed. Row count: 1
+[2024-12-11 21:52:25] [DEBUG] User found: Array
+(
+    [username] => maame1
+    [email] => maame@asheci.com
+)
+
+[2024-12-11 21:52:25] [INFO] Login successful for user: maame1
+[2024-12-11 21:52:35] [DEBUG] First name fetched: Maame
+[2024-12-11 21:52:35] [DEBUG] First name before display: Maame
+[2024-12-11 21:52:50] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 21:52:51] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 21:53:11] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-11 21:53:19] [DEBUG] First name fetched: Maame
+[2024-12-11 21:53:19] [DEBUG] First name before display: Maame
+[2024-12-11 22:03:25] [DEBUG] POST data received: Array
+(
+    [loginInput] => maame1
+    [password] => Maame123
+)
+
+[2024-12-11 22:03:25] [DEBUG] Login Input: maame1
+[2024-12-11 22:03:25] [DEBUG] Password received: yes
+[2024-12-11 22:03:25] [DEBUG] Searching by username
+[2024-12-11 22:03:25] [DEBUG] Query executed. Row count: 1
+[2024-12-11 22:03:25] [DEBUG] User found: Array
+(
+    [username] => maame1
+    [email] => maame@asheci.com
+)
+
+[2024-12-11 22:03:25] [WARNING] Password verification failed for user: maame1
+[2024-12-11 22:03:34] [DEBUG] POST data received: Array
+(
+    [loginInput] => maame1
+    [password] => Maame@123
+)
+
+[2024-12-11 22:03:34] [DEBUG] Login Input: maame1
+[2024-12-11 22:03:34] [DEBUG] Password received: yes
+[2024-12-11 22:03:34] [DEBUG] Searching by username
+[2024-12-11 22:03:34] [DEBUG] Query executed. Row count: 1
+[2024-12-11 22:03:34] [DEBUG] User found: Array
+(
+    [username] => maame1
+    [email] => maame@asheci.com
+)
+
+[2024-12-11 22:03:34] [INFO] Login successful for user: maame1
+[2024-12-11 22:03:42] [DEBUG] First name fetched: Maame
+[2024-12-11 22:03:42] [DEBUG] First name before display: Maame
+[2024-12-11 22:11:31] [DEBUG] POST data received: Array
+(
+    [loginInput] => admin
+    [password] => admin123
+)
+
+[2024-12-11 22:11:31] [DEBUG] Login Input: admin
+[2024-12-11 22:11:31] [DEBUG] Password received: yes
+[2024-12-11 22:11:31] [DEBUG] Searching by username
+[2024-12-11 22:11:31] [DEBUG] Query executed. Row count: 1
+[2024-12-11 22:11:31] [DEBUG] User found: Array
+(
+    [username] => admin
+    [email] => admin@studybuddy.com
+)
+
+[2024-12-11 22:11:31] [WARNING] Password verification failed for user: admin
+[2024-12-11 22:11:32] [DEBUG] POST data received: Array
+(
+    [loginInput] => admin
+    [password] => admin123
+)
+
+[2024-12-11 22:11:32] [DEBUG] Login Input: admin
+[2024-12-11 22:11:32] [DEBUG] Password received: yes
+[2024-12-11 22:11:32] [DEBUG] Searching by username
+[2024-12-11 22:11:32] [DEBUG] Query executed. Row count: 1
+[2024-12-11 22:11:32] [DEBUG] User found: Array
+(
+    [username] => admin
+    [email] => admin@studybuddy.com
+)
+
+[2024-12-11 22:11:33] [WARNING] Password verification failed for user: admin
+[2024-12-11 22:11:45] [DEBUG] POST data received: Array
+(
+    [loginInput] => admin
+    [password] => admin123
+)
+
+[2024-12-11 22:11:45] [DEBUG] Login Input: admin
+[2024-12-11 22:11:45] [DEBUG] Password received: yes
+[2024-12-11 22:11:45] [DEBUG] Searching by username
+[2024-12-11 22:11:45] [DEBUG] Query executed. Row count: 1
+[2024-12-11 22:11:45] [DEBUG] User found: Array
+(
+    [username] => admin
+    [email] => admin@studybuddy.com
+)
+
+[2024-12-11 22:11:45] [WARNING] Password verification failed for user: admin
+[2024-12-11 22:15:10] [DEBUG] POST data received: Array
+(
+    [loginInput] => admin
+    [password] => Admin!23
+)
+
+[2024-12-11 22:15:10] [DEBUG] Login Input: admin
+[2024-12-11 22:15:10] [DEBUG] Password received: yes
+[2024-12-11 22:15:10] [DEBUG] Searching by username
+[2024-12-11 22:15:10] [DEBUG] Query executed. Row count: 1
+[2024-12-11 22:15:10] [DEBUG] User found: Array
+(
+    [username] => admin
+    [email] => admin@studybuddy.com
+)
+
+[2024-12-11 22:15:28] [DEBUG] POST data received: Array
+(
+    [loginInput] => admin
+    [password] => Admin!23
+)
+
+[2024-12-11 22:15:28] [DEBUG] Login Input: admin
+[2024-12-11 22:15:28] [DEBUG] Password received: yes
+[2024-12-11 22:15:28] [DEBUG] Searching by username
+[2024-12-11 22:15:28] [DEBUG] Query executed. Row count: 1
+[2024-12-11 22:15:28] [DEBUG] User found: Array
+(
+    [username] => admin
+    [email] => admin@studybuddy.com
+)
+
+[2024-12-11 22:20:23] [DEBUG] Login attempt for: admin
+[2024-12-11 22:20:23] [DEBUG] First name fetched: admin
+[2024-12-11 22:20:23] [DEBUG] First name before display: admin
+[2024-12-11 22:20:59] [DEBUG] First name fetched: admin
+[2024-12-11 22:20:59] [DEBUG] First name before display: admin
+[2024-12-11 22:21:18] [DEBUG] Login attempt for: admin
+[2024-12-11 22:27:05] [DEBUG] Login attempt for: admin
+[2024-12-11 22:27:05] [DEBUG] Stored hash: $2y$10$tH7KWupLPCRY2n81Yvcceexv5wZCHGsEIEJXQ9sIBkXgMxCSnl7YG
+[2024-12-11 22:27:05] [DEBUG] Verifying password for user: admin
+[2024-12-11 22:27:38] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-11 22:27:44] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-11 22:27:52] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-11 22:28:15] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-11 22:28:46] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-11 22:29:03] [DEBUG] Login attempt for: admin
+[2024-12-11 22:29:03] [DEBUG] Stored hash: $2y$10$tH7KWupLPCRY2n81Yvcceexv5wZCHGsEIEJXQ9sIBkXgMxCSnl7YG
+[2024-12-11 22:29:03] [DEBUG] Verifying password for user: admin

@@ -1,0 +1,52 @@
+@import 'auth/auth-common.css';
+
+.login-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.remember-me input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.forgot-password a {
+  color: #666;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  color: var(--primary-color);
+}
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: #666;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: #e1e1e1;
+}
+
+.login-divider span {
+  padding: 0 10px;
+  font-size: 0.9rem;
+}
+

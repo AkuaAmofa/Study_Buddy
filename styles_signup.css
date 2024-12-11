@@ -1,0 +1,65 @@
+@import 'auth-common.css';
+
+.signup-form {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.name-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.password-requirements {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 8px;
+  padding: 8px;
+  background-color: #f8f9fa;
+  border-radius: var(--input-radius);
+}
+
+.password-requirements ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 5px 0 0 0;
+}
+
+.password-requirements li {
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.password-requirements li::before {
+  content: '•';
+  color: var(--primary-color);
+  margin-right: 8px;
+}
+
+.terms-checkbox {
+  display: flex;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+
+.terms-checkbox input[type="checkbox"] {
+  margin-right: 10px;
+  margin-top: 4px;
+}
+
+.terms-checkbox label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.terms-checkbox a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.terms-checkbox a:hover {
+  text-decoration: underline;
+}
+

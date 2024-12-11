@@ -52,7 +52,7 @@ CREATE TABLE `resources` (
   `description` text DEFAULT NULL,
   `file_path` varchar(255) DEFAULT NULL,
   `file_type` varchar(50) DEFAULT NULL,
-  `subject` varchar(100) DEFAULT NULL,
+  `category` varchar(100) DEFAULT NULL,
   `downloads` int(11) DEFAULT 0,
   `rating` decimal(3,2) DEFAULT 0.00,
   `uploaded_at` timestamp NOT NULL DEFAULT current_timestamp()
@@ -106,6 +106,30 @@ CREATE TABLE `users` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for messages
+--
+
+CREATE TABLE messages (
+    message_id INT PRIMARY KEY AUTO_INCREMENT,
+    sender_id INT NOT NULL,
+    recipient_id INT NOT NULL,
+    message_text TEXT NOT NULL,
+    sent_at DATETIME NOT NULL,
+    read_at DATETIME DEFAULT NULL,
+    FOREIGN KEY (sender_id) REFERENCES users(user_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    FOREIGN KEY (recipient_id) REFERENCES users(user_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    INDEX idx_sender (sender_id),
+    INDEX idx_recipient (recipient_id),
+    INDEX idx_sent_at (sent_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 --
 -- Indexes for dumped tables
 --
@@ -122,7 +146,8 @@ ALTER TABLE `assignments`
 --
 ALTER TABLE `resources`
   ADD PRIMARY KEY (`resource_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `idx_resources_category` (`category`);
 
 --
 -- Indexes for table `studybuddyconnections`
