@@ -75,76 +75,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login - Study Buddy</title>
     <link rel="stylesheet" href="../css/login.css">
-   
 </head>
 <body>
-    <div class="signup-section">
-        <form id="loginForm">
-            <h2 style="text-align: center;">Login</h2>
-            <div class="form-group">
-                <label for="loginInput">Email or Username:</label>
-                <input type="text" id="loginInput" name="loginInput" placeholder="Enter your email or username" required>
-                <div class="error-message" id="loginError"></div>
+    <div class="dede">
+        <div class="form">
+            <div class="press">
+                <button class="header-btn active" id="loginBtn">Login</button>
+                <div id="btn"></div>
             </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                <div class="error-message" id="passwordError"></div>
+            <form id="LogIn" class="input" method="POST" action="login.php">
+                <input type="text" class="input-place" name="loginInput" placeholder="Email or Username" required>
+                <input type="password" class="input-place" name="password" placeholder="Password" required>
+                <div class="remember-forgot">
+                    <label>
+                        <input type="checkbox" class="check-box"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="sumbit-btn">Login</button>
+                <div class="error-message" id="errorMessage"></div>
+            </form>
+            <div class="form-links">
+                <a href="signup.php">Don't have an account? Sign up here</a>
             </div>
-            <div class="form-group">
-                <button type="submit">Login</button>
-            </div>
-            <a class="signup-link" href="signup.php">Don't have an account? Sign up here</a>
-            <div class="error-message" id="errorMessage"></div>
-        </form>
+        </div>
     </div>
-
-    <script>
-   document.getElementById('loginForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    console.log('Form submitted');
-
-    const formData = new FormData(this);
-    const errorMessage = document.getElementById('errorMessage');
-    
-    // Debug: Log form data
-    for (let pair of formData.entries()) {
-        console.log(pair[0] + ': ' + pair[1]);
-    }
-    
-    errorMessage.textContent = '';
-
-    fetch('login.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => {
-        console.log('Response status:', response.status);
-        return response.text();
-    })
-    .then(text => {
-        console.log('Raw response:', text);
-        try {
-            const data = JSON.parse(text);
-            console.log('Parsed data:', data);
-            if (data.success) {
-                window.location.href = data.redirect;
-            } else {
-                errorMessage.textContent = data.message || 'Login failed';
-            }
-        } catch (e) {
-            console.error('Parse error:', e);
-            console.error('Raw response:', text);
-            errorMessage.textContent = 'Server response error. Please try again.';
-        }
-    })
-    .catch(error => {
-        console.error('Fetch error:', error);
-        errorMessage.textContent = 'An error occurred. Please try again.';
-    });
-});
-    </script>
 </body>
 </html>

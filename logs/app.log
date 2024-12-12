@@ -431,3 +431,107 @@
 [2024-12-11 22:29:03] [DEBUG] Login attempt for: admin
 [2024-12-11 22:29:03] [DEBUG] Stored hash: $2y$10$tH7KWupLPCRY2n81Yvcceexv5wZCHGsEIEJXQ9sIBkXgMxCSnl7YG
 [2024-12-11 22:29:03] [DEBUG] Verifying password for user: admin
+[2024-12-12 14:16:08] [DEBUG] First name fetched: admin
+[2024-12-12 14:16:08] [DEBUG] First name before display: admin
+[2024-12-12 14:16:18] [DEBUG] First name fetched: admin
+[2024-12-12 14:16:18] [DEBUG] First name before display: admin
+[2024-12-12 14:16:20] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 14:16:23] [DEBUG] First name fetched: admin
+[2024-12-12 14:16:23] [DEBUG] First name before display: admin
+[2024-12-12 14:18:01] [DEBUG] Login attempt for: maame1
+[2024-12-12 14:18:01] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-12 14:18:01] [DEBUG] Verifying password for user: maame1
+[2024-12-12 14:18:02] [DEBUG] First name fetched: Maame
+[2024-12-12 14:18:02] [DEBUG] First name before display: Maame
+[2024-12-12 14:18:29] [DEBUG] Login attempt for: maame1
+[2024-12-12 14:18:29] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-12 14:18:29] [DEBUG] Verifying password for user: maame1
+[2024-12-12 14:18:29] [DEBUG] First name fetched: Maame
+[2024-12-12 14:18:29] [DEBUG] First name before display: Maame
+[2024-12-12 14:18:48] [INFO] Assignment ID: 2 status updated to: In Progress
+[2024-12-12 14:18:50] [INFO] Assignment ID: 4 status updated to: Completed
+[2024-12-12 14:19:22] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 14:20:23] [INFO] Resource uploaded successfully: systems
+[2024-12-12 14:21:40] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 14:22:55] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 14:23:00] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 14:23:05] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 14:23:09] [DEBUG] First name fetched: Maame
+[2024-12-12 14:23:09] [DEBUG] First name before display: Maame
+[2024-12-12 14:23:50] [DEBUG] First name fetched: Maame
+[2024-12-12 14:23:50] [DEBUG] First name before display: Maame
+[2024-12-12 14:24:24] [DEBUG] Login attempt for: admin
+[2024-12-12 14:24:24] [DEBUG] Stored hash: $2y$10$tH7KWupLPCRY2n81Yvcceexv5wZCHGsEIEJXQ9sIBkXgMxCSnl7YG
+[2024-12-12 14:24:24] [DEBUG] Verifying password for user: admin
+[2024-12-12 14:24:35] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-12 14:56:34] [DEBUG] Login attempt for: maame1
+[2024-12-12 14:56:34] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-12 14:56:34] [DEBUG] Verifying password for user: maame1
+[2024-12-12 14:56:34] [DEBUG] First name fetched: Maame
+[2024-12-12 14:56:34] [DEBUG] First name before display: Maame
+[2024-12-12 14:56:42] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 15:01:53] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 15:02:00] [INFO] Assignment ID: 2 status updated to: Not Started
+[2024-12-12 15:02:07] [INFO] Assignment ID: 4 status updated to: Not Started
+[2024-12-12 15:02:09] [INFO] Assignment ID: 2 status updated to: Completed
+[2024-12-12 15:02:14] [DEBUG] First name fetched: Maame
+[2024-12-12 15:02:14] [DEBUG] First name before display: Maame
+[2024-12-12 15:02:37] [DEBUG] First name fetched: Maame
+[2024-12-12 15:02:37] [DEBUG] First name before display: Maame
+[2024-12-12 15:11:09] [DEBUG] First name fetched: Maame
+[2024-12-12 15:11:09] [DEBUG] First name before display: Maame
+[2024-12-12 15:36:15] [DEBUG] Login attempt for: maame1
+[2024-12-12 15:36:15] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-12 15:36:15] [DEBUG] Verifying password for user: maame1
+[2024-12-12 15:36:15] [WARNING] Password verification failed for user: maame1
+[2024-12-12 15:36:32] [DEBUG] Login attempt for: maame1
+[2024-12-12 15:36:32] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-12 15:36:32] [DEBUG] Verifying password for user: maame1
+[2024-12-12 15:46:59] [DEBUG] First name fetched: Maame
+[2024-12-12 15:46:59] [DEBUG] First name before display: Maame
+[2024-12-12 17:18:18] [DEBUG] First name fetched: Maame
+[2024-12-12 17:18:18] [DEBUG] First name before display: Maame
+[2024-12-12 17:55:42] [DEBUG] First name fetched: Maame
+[2024-12-12 17:55:42] [DEBUG] First name before display: Maame
+[2024-12-12 17:55:46] [DEBUG] First name fetched: Maame
+[2024-12-12 17:55:46] [DEBUG] First name before display: Maame
+[2024-12-12 17:55:48] [DEBUG] First name fetched: Maame
+[2024-12-12 17:55:48] [DEBUG] First name before display: Maame
+[2024-12-12 17:55:50] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 17:55:51] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 17:55:52] [DEBUG] First name fetched: Maame
+[2024-12-12 17:55:52] [DEBUG] First name before display: Maame
+[2024-12-12 17:55:55] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-12 17:55:59] [DEBUG] First name fetched: Maame
+[2024-12-12 17:55:59] [DEBUG] First name before display: Maame
+[2024-12-12 17:56:00] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 17:56:01] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 17:56:02] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 17:56:04] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 17:56:05] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 17:56:06] [DEBUG] First name fetched: Maame
+[2024-12-12 17:56:06] [DEBUG] First name before display: Maame
+[2024-12-12 17:56:09] [DEBUG] First name fetched: Maame
+[2024-12-12 17:56:09] [DEBUG] First name before display: Maame
+[2024-12-12 17:56:10] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 17:56:12] [DEBUG] First name fetched: Maame
+[2024-12-12 17:56:12] [DEBUG] First name before display: Maame
+[2024-12-12 17:56:15] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-12 17:56:23] [DEBUG] First name fetched: Maame
+[2024-12-12 17:56:23] [DEBUG] First name before display: Maame
+[2024-12-12 17:56:24] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 17:56:25] [DEBUG] First name fetched: Maame
+[2024-12-12 17:56:25] [DEBUG] First name before display: Maame
+[2024-12-12 17:56:29] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 17:56:30] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 17:57:01] [DEBUG] First name fetched: Maame
+[2024-12-12 17:57:01] [DEBUG] First name before display: Maame
+[2024-12-12 17:57:58] [DEBUG] First name fetched: Maame
+[2024-12-12 17:57:58] [DEBUG] First name before display: Maame
+[2024-12-12 17:58:18] [DEBUG] First name fetched: Maame
+[2024-12-12 17:58:18] [DEBUG] First name before display: Maame
+[2024-12-12 17:58:20] [DEBUG] First name fetched: Maame
+[2024-12-12 17:58:20] [DEBUG] First name before display: Maame
+[2024-12-12 17:58:24] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 17:58:27] [DEBUG] First name fetched: Maame
+[2024-12-12 17:58:27] [DEBUG] First name before display: Maame
