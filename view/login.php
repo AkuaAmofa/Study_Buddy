@@ -79,28 +79,60 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-    <div class="dede">
-        <div class="form">
-            <div class="press">
-                <button class="header-btn active" id="loginBtn">Login</button>
-                <div id="btn"></div>
-            </div>
-            <form id="LogIn" class="input" method="POST" action="login.php">
-                <input type="text" class="input-place" name="loginInput" placeholder="Email or Username" required>
-                <input type="password" class="input-place" name="password" placeholder="Password" required>
-                <div class="remember-forgot">
-                    <label>
-                        <input type="checkbox" class="check-box"> Remember me
-                    </label>
-                    <a href="#" class="forgot-password">Forgot Password?</a>
+    <div class="sidebar">
+        <!-- Sidebar content here -->
+    </div>
+
+    <div class="main-content">
+        <div class="dashboard">
+            <div class="dede">
+                <div class="form">
+                    <div class="press">
+                        <button class="header-btn active" id="loginBtn">Login</button>
+                        <div id="btn"></div>
+                    </div>
+                    <form id="LogIn" class="input" method="POST" action="login.php">
+                        <input type="text" class="input-place" name="loginInput" placeholder="Email or Username" required>
+                        <input type="password" class="input-place" name="password" placeholder="Password" required>
+                        <div class="remember-forgot">
+                            <label>
+                                <input type="checkbox" class="check-box"> Remember me
+                            </label>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="sumbit-btn">Login</button>
+                        <div class="error-message" id="errorMessage"></div>
+                    </form>
+                    <div class="form-links">
+                        <a href="signup.php">Don't have an account? Sign up here</a>
+                    </div>
                 </div>
-                <button type="submit" class="sumbit-btn">Login</button>
-                <div class="error-message" id="errorMessage"></div>
-            </form>
-            <div class="form-links">
-                <a href="signup.php">Don't have an account? Sign up here</a>
             </div>
         </div>
     </div>
+    <script>
+    document.getElementById('LogIn').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const formData = new FormData(this);
+
+        fetch('login.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                window.location.href = data.redirect; // Redirect to the specified page
+            } else {
+                document.getElementById('errorMessage').textContent = data.message; // Display error message
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('errorMessage').textContent = 'An error occurred. Please try again.';
+        });
+    });
+    </script>
 </body>
 </html>

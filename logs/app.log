@@ -535,3 +535,231 @@
 [2024-12-12 17:58:24] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
 [2024-12-12 17:58:27] [DEBUG] First name fetched: Maame
 [2024-12-12 17:58:27] [DEBUG] First name before display: Maame
+[2024-12-12 18:08:17] [DEBUG] Login attempt for: maame1
+[2024-12-12 18:08:17] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-12 18:08:17] [DEBUG] Verifying password for user: maame1
+[2024-12-12 18:08:17] [DEBUG] First name fetched: Maame
+[2024-12-12 18:08:17] [DEBUG] First name before display: Maame
+[2024-12-12 18:09:09] [DEBUG] First name fetched: Maame
+[2024-12-12 18:09:09] [DEBUG] First name before display: Maame
+[2024-12-12 18:10:30] [DEBUG] First name fetched: Maame
+[2024-12-12 18:10:30] [DEBUG] First name before display: Maame
+[2024-12-12 18:10:35] [DEBUG] First name fetched: Maame
+[2024-12-12 18:10:35] [DEBUG] First name before display: Maame
+[2024-12-12 18:10:37] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 18:10:41] [DEBUG] First name fetched: Maame
+[2024-12-12 18:10:41] [DEBUG] First name before display: Maame
+[2024-12-12 18:14:31] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 18:14:59] [DEBUG] First name fetched: Maame
+[2024-12-12 18:14:59] [DEBUG] First name before display: Maame
+[2024-12-12 18:15:14] [INFO] Assignment ID: 2 status updated to: Not Started
+[2024-12-12 18:15:19] [INFO] Assignment updated: Leadership Reflection
+[2024-12-12 18:15:48] [DEBUG] First name fetched: Maame
+[2024-12-12 18:15:48] [DEBUG] First name before display: Maame
+[2024-12-12 18:15:57] [DEBUG] First name fetched: Maame
+[2024-12-12 18:15:57] [DEBUG] First name before display: Maame
+[2024-12-12 18:15:59] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 18:42:49] [DEBUG] First name fetched: Maame
+[2024-12-12 18:42:49] [DEBUG] First name before display: Maame
+[2024-12-12 18:43:32] [INFO] Assignment ID: 2 status updated to: Completed
+[2024-12-12 18:43:40] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 21:04:41] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 21:05:48] [DEBUG] Login attempt for: maame1
+[2024-12-12 21:05:48] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-12 21:05:48] [DEBUG] Verifying password for user: maame1
+[2024-12-12 21:05:48] [DEBUG] First name fetched: Maame
+[2024-12-12 21:05:48] [DEBUG] First name before display: Maame
+[2024-12-12 21:05:53] [DEBUG] First name fetched: Maame
+[2024-12-12 21:05:53] [DEBUG] First name before display: Maame
+[2024-12-12 21:17:07] [DEBUG] First name fetched: Maame
+[2024-12-12 21:17:07] [DEBUG] First name before display: Maame
+[2024-12-12 21:17:25] [DEBUG] First name fetched: Maame
+[2024-12-12 21:17:25] [DEBUG] First name before display: Maame
+[2024-12-12 21:18:17] [DEBUG] First name fetched: Maame
+[2024-12-12 21:18:17] [DEBUG] First name before display: Maame
+[2024-12-12 21:18:26] [INFO] Assignment ID: 2 status updated to: In Progress
+[2024-12-12 21:26:11] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 21:34:22] [ERROR] Error in study buddies page: User profile not found
+[2024-12-12 21:38:32] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 21:39:10] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 21:39:10] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 21:39:12] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 21:39:14] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 21:39:35] [ERROR] Error in study buddies page: User profile not found
+[2024-12-12 21:40:51] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 21:40:52] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-12 21:43:35] [ERROR] Error in study buddies page: User profile not found
+[2024-12-12 21:44:27] [DEBUG] First name fetched: Maame
+[2024-12-12 21:44:27] [DEBUG] First name before display: Maame
+[2024-12-12 21:44:43] [INFO] Assignment ID: 4 status updated to: Completed
+[2024-12-12 21:44:48] [INFO] Assignment ID: 2 status updated to: Not Started
+[2024-12-12 21:45:11] [INFO] Assignment ID: 4 status updated to: Not Started
+[2024-12-12 21:45:32] [INFO] Resource downloaded: systems
+[2024-12-12 21:45:39] [INFO] Resource deleted successfully: ID 2
+[2024-12-12 21:45:46] [ERROR] Error in study buddies page: User profile not found
+[2024-12-12 21:45:53] [ERROR] Error in study buddies page: User profile not found
+[2024-12-12 21:48:21] [ERROR] Error in study buddies page: User profile not found
+[2024-12-12 21:48:24] [ERROR] Error in study buddies page: User profile not found
+[2024-12-12 22:53:56] [DEBUG] Login attempt for: maame1
+[2024-12-12 22:53:56] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-12 22:53:56] [DEBUG] Verifying password for user: maame1
+[2024-12-13 14:58:59] [DEBUG] Login attempt for: maame1
+[2024-12-13 14:58:59] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-13 14:58:59] [DEBUG] Verifying password for user: maame1
+[2024-12-13 15:01:33] [DEBUG] Login attempt for: maame1
+[2024-12-13 15:01:33] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-13 15:01:33] [DEBUG] Verifying password for user: maame1
+[2024-12-13 15:01:45] [DEBUG] Login attempt for: maame1
+[2024-12-13 15:01:45] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-13 15:01:45] [DEBUG] Verifying password for user: maame1
+[2024-12-13 15:01:46] [DEBUG] First name fetched: Maame
+[2024-12-13 15:01:46] [DEBUG] First name before display: Maame
+[2024-12-13 15:06:03] [DEBUG] First name fetched: Maame
+[2024-12-13 15:06:03] [DEBUG] First name before display: Maame
+[2024-12-13 15:10:22] [DEBUG] First name fetched: Maame
+[2024-12-13 15:10:22] [DEBUG] First name before display: Maame
+[2024-12-13 16:06:07] [DEBUG] First name fetched: Maame
+[2024-12-13 16:06:07] [DEBUG] First name before display: Maame
+[2024-12-13 16:06:42] [DEBUG] First name fetched: Maame
+[2024-12-13 16:06:42] [DEBUG] First name before display: Maame
+[2024-12-13 16:06:46] [DEBUG] First name fetched: Maame
+[2024-12-13 16:06:46] [DEBUG] First name before display: Maame
+[2024-12-13 16:11:17] [DEBUG] First name fetched: Maame
+[2024-12-13 16:11:17] [DEBUG] First name before display: Maame
+[2024-12-13 16:11:18] [DEBUG] First name fetched: Maame
+[2024-12-13 16:11:18] [DEBUG] First name before display: Maame
+[2024-12-13 16:24:59] [DEBUG] First name fetched: Maame
+[2024-12-13 16:24:59] [DEBUG] First name before display: Maame
+[2024-12-13 16:25:00] [DEBUG] First name fetched: Maame
+[2024-12-13 16:25:00] [DEBUG] First name before display: Maame
+[2024-12-13 16:25:05] [DEBUG] First name fetched: Maame
+[2024-12-13 16:25:05] [DEBUG] First name before display: Maame
+[2024-12-13 16:25:08] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 16:25:10] [DEBUG] First name fetched: Maame
+[2024-12-13 16:25:10] [DEBUG] First name before display: Maame
+[2024-12-13 16:25:13] [DEBUG] First name fetched: Maame
+[2024-12-13 16:25:13] [DEBUG] First name before display: Maame
+[2024-12-13 16:25:20] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 16:25:21] [DEBUG] First name fetched: Maame
+[2024-12-13 16:25:21] [DEBUG] First name before display: Maame
+[2024-12-13 16:28:34] [DEBUG] First name fetched: Maame
+[2024-12-13 16:28:34] [DEBUG] First name before display: Maame
+[2024-12-13 16:28:35] [DEBUG] First name fetched: Maame
+[2024-12-13 16:28:35] [DEBUG] First name before display: Maame
+[2024-12-13 16:28:40] [DEBUG] First name fetched: Maame
+[2024-12-13 16:28:40] [DEBUG] First name before display: Maame
+[2024-12-13 16:39:56] [DEBUG] First name fetched: Maame
+[2024-12-13 16:39:56] [DEBUG] First name before display: Maame
+[2024-12-13 16:40:02] [DEBUG] First name fetched: Maame
+[2024-12-13 16:40:02] [DEBUG] First name before display: Maame
+[2024-12-13 16:46:39] [DEBUG] First name fetched: Maame
+[2024-12-13 16:46:39] [DEBUG] First name before display: Maame
+[2024-12-13 16:46:44] [DEBUG] First name fetched: Maame
+[2024-12-13 16:46:44] [DEBUG] First name before display: Maame
+[2024-12-13 16:46:45] [DEBUG] First name fetched: Maame
+[2024-12-13 16:46:45] [DEBUG] First name before display: Maame
+[2024-12-13 17:02:14] [DEBUG] First name fetched: Maame
+[2024-12-13 17:02:14] [DEBUG] First name before display: Maame
+[2024-12-13 17:02:15] [DEBUG] First name fetched: Maame
+[2024-12-13 17:02:15] [DEBUG] First name before display: Maame
+[2024-12-13 17:13:09] [DEBUG] First name fetched: Maame
+[2024-12-13 17:13:09] [DEBUG] First name before display: Maame
+[2024-12-13 17:33:03] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 17:33:49] [INFO] Resource uploaded successfully: SYSTEMS
+[2024-12-13 17:38:03] [DEBUG] First name fetched: Maame
+[2024-12-13 17:38:03] [DEBUG] First name before display: Maame
+[2024-12-13 17:38:26] [DEBUG] First name fetched: Maame
+[2024-12-13 17:38:26] [DEBUG] First name before display: Maame
+[2024-12-13 17:38:40] [DEBUG] First name fetched: Maame
+[2024-12-13 17:38:40] [DEBUG] First name before display: Maame
+[2024-12-13 17:38:50] [DEBUG] First name fetched: Maame
+[2024-12-13 17:38:50] [DEBUG] First name before display: Maame
+[2024-12-13 18:05:07] [DEBUG] First name fetched: Maame
+[2024-12-13 18:05:07] [DEBUG] First name before display: Maame
+[2024-12-13 18:05:18] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 20:05:53] [ERROR] Error fetching notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-13 20:05:55] [ERROR] Error fetching notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-13 20:05:55] [ERROR] Error fetching notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-13 20:10:47] [ERROR] Error fetching notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-13 20:10:48] [ERROR] Error fetching notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-13 20:23:38] [DEBUG] First name fetched: Maame
+[2024-12-13 20:23:38] [DEBUG] First name before display: Maame
+[2024-12-13 20:23:43] [ERROR] Error fetching notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-13 20:25:10] [ERROR] Error fetching notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-13 20:25:11] [ERROR] Error fetching notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-13 20:31:43] [ERROR] Error fetching notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-13 20:31:44] [ERROR] Error fetching notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-13 20:32:39] [ERROR] Error fetching notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-13 20:32:40] [ERROR] Error fetching notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-13 20:32:42] [DEBUG] First name fetched: Maame
+[2024-12-13 20:32:42] [DEBUG] First name before display: Maame
+[2024-12-13 20:32:49] [DEBUG] First name fetched: Maame
+[2024-12-13 20:32:49] [DEBUG] First name before display: Maame
+[2024-12-13 20:32:52] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 20:32:57] [DEBUG] First name fetched: Maame
+[2024-12-13 20:32:57] [DEBUG] First name before display: Maame
+[2024-12-13 20:33:14] [INFO] Assignment updated: Leadership Reflection
+[2024-12-13 20:33:21] [INFO] Assignment ID: 2 status updated to: In Progress
+[2024-12-13 20:33:24] [INFO] Assignment ID: 2 status updated to: Not Started
+[2024-12-13 20:33:26] [INFO] Assignment ID: 2 status updated to: Completed
+[2024-12-13 20:33:29] [INFO] Assignment ID: 2 status updated to: In Progress
+[2024-12-13 20:34:39] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 20:34:41] [DEBUG] First name fetched: Maame
+[2024-12-13 20:34:41] [DEBUG] First name before display: Maame
+[2024-12-13 20:34:45] [DEBUG] First name fetched: Maame
+[2024-12-13 20:34:45] [DEBUG] First name before display: Maame
+[2024-12-13 20:34:46] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 20:34:47] [DEBUG] First name fetched: Maame
+[2024-12-13 20:34:47] [DEBUG] First name before display: Maame
+[2024-12-13 20:34:51] [DEBUG] First name fetched: Maame
+[2024-12-13 20:34:51] [DEBUG] First name before display: Maame
+[2024-12-13 20:34:53] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 20:34:55] [DEBUG] First name fetched: Maame
+[2024-12-13 20:34:55] [DEBUG] First name before display: Maame
+[2024-12-13 20:37:01] [ERROR] Error in profile page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-13 20:37:36] [DEBUG] First name fetched: Maame
+[2024-12-13 20:37:36] [DEBUG] First name before display: Maame
+[2024-12-13 20:37:37] [DEBUG] First name fetched: Maame
+[2024-12-13 20:37:37] [DEBUG] First name before display: Maame
+[2024-12-13 20:48:05] [ERROR] Error in profile page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-13 20:48:20] [ERROR] Error in profile page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-13 20:48:26] [ERROR] Error in profile page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-13 20:49:10] [DEBUG] First name fetched: Maame
+[2024-12-13 20:49:10] [DEBUG] First name before display: Maame
+[2024-12-13 21:37:50] [DEBUG] First name fetched: Maame
+[2024-12-13 21:37:50] [DEBUG] First name before display: Maame
+[2024-12-13 21:38:07] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 21:49:19] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 22:15:16] [ERROR] Error in signup page: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'PrincessC' for key 'username'
+[2024-12-13 22:15:34] [DEBUG] First name fetched: Maame
+[2024-12-13 22:15:34] [DEBUG] First name before display: Maame
+[2024-12-13 22:15:36] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 22:15:38] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 22:16:16] [DEBUG] First name fetched: Maame
+[2024-12-13 22:16:16] [DEBUG] First name before display: Maame
+[2024-12-13 22:16:19] [DEBUG] First name fetched: Maame
+[2024-12-13 22:16:19] [DEBUG] First name before display: Maame
+[2024-12-13 22:16:50] [DEBUG] Login attempt for: PrincessC
+[2024-12-13 22:16:50] [DEBUG] Stored hash: $2y$10$F0T1rqFtTx1MiSz5XWr4BOqk3taPPHD8aG3nxQcdqUIq5FcvRvVl.
+[2024-12-13 22:16:50] [DEBUG] Verifying password for user: PrincessC
+[2024-12-13 22:16:50] [DEBUG] First name fetched: Princess
+[2024-12-13 22:16:50] [DEBUG] First name before display: Princess
+[2024-12-13 22:16:53] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 22:17:01] [DEBUG] First name fetched: Princess
+[2024-12-13 22:17:01] [DEBUG] First name before display: Princess
+[2024-12-13 22:17:30] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 22:17:35] [DEBUG] First name fetched: Princess
+[2024-12-13 22:17:35] [DEBUG] First name before display: Princess
+[2024-12-13 22:32:05] [DEBUG] First name fetched: Princess
+[2024-12-13 22:32:05] [DEBUG] First name before display: Princess
+[2024-12-13 22:33:55] [DEBUG] First name fetched: Princess
+[2024-12-13 22:33:55] [DEBUG] First name before display: Princess
+[2024-12-13 22:44:28] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 22:44:31] [DEBUG] First name fetched: Princess
+[2024-12-13 22:44:31] [DEBUG] First name before display: Princess
+[2024-12-13 22:59:01] [DEBUG] First name fetched: Princess
+[2024-12-13 22:59:01] [DEBUG] First name before display: Princess
+[2024-12-13 22:59:18] [DEBUG] First name fetched: Princess
+[2024-12-13 22:59:18] [DEBUG] First name before display: Princess
+[2024-12-13 22:59:19] [DEBUG] First name fetched: Princess
+[2024-12-13 22:59:19] [DEBUG] First name before display: Princess

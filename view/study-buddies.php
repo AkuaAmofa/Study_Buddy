@@ -1,22 +1,13 @@
 <?php
-session_start();
 require_once '../db/db.php';
 require_once '../db/logger.php';
 
+// Set page variables before including main layout
 $page_title = 'Study Buddies';
 $current_page = 'study-buddies';
 
-// Initialize variables
-$potential_buddies = [];
-$pending_requests = [];
-$current_connections = [];
-$error_message = '';
-
-// Ensure user is logged in
-if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
-    exit();
-}
+// Start output buffering
+ob_start();
 
 try {
     $conn = get_db_connection();
@@ -27,7 +18,7 @@ try {
         FROM users 
         WHERE user_id = :user_id
     ");
-    $stmt->execute(['user_id' => $_SESSION['user_id']]);
+    $stmt->execute(['user_id' => $_SESSION['user_id'] ?? null]);
     $current_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if (!$current_user) {
@@ -66,7 +57,7 @@ try {
     ");
     
     $stmt->execute([
-        'user_id' => $_SESSION['user_id'],
+        'user_id' => $_SESSION['user_id'] ?? null,
         'major' => $current_user['major'],
         'interests' => $current_user['interests']
     ]);
@@ -86,7 +77,7 @@ try {
         WHERE sbc.user_id2 = :user_id 
         AND sbc.status = 'Pending'
     ");
-    $stmt->execute(['user_id' => $_SESSION['user_id']]);
+    $stmt->execute(['user_id' => $_SESSION['user_id'] ?? null]);
     $pending_requests = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     // Fetch current connections
@@ -103,16 +94,13 @@ try {
         AND u.user_id != :user_id
         AND sbc.status = 'Accepted'
     ");
-    $stmt->execute(['user_id' => $_SESSION['user_id']]);
+    $stmt->execute(['user_id' => $_SESSION['user_id'] ?? null]);
     $current_connections = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 } catch (Exception $e) {
     log_message("Error in study buddies page: " . $e->getMessage(), 'ERROR');
     $error_message = "An error occurred while loading the page. Please try again later.";
 }
-
-// Start output buffering for the main layout
-ob_start();
 ?>
 
 <style>
@@ -346,6 +334,9 @@ ob_start();
     </script>
 
 <?php
+// Get the buffered content
 $content = ob_get_clean();
+
+// Include the main layout which will use $content
 require_once 'layouts/main_layout.php';
 ?>

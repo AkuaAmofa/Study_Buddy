@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 require_once '../db/db.php';
 require_once '../db/logger.php';
 
@@ -61,15 +61,23 @@ try {
     <title>Assignment Tracker - Study Buddy</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background-color: #f5f5f5;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 20px 40px;
+            margin-left: 250px;
+        }
+
+        h1 {
+            margin: 20px 0 30px 0;
+            color: #333;
+            padding-left: 20px;
         }
 
         .stats-container {
@@ -77,90 +85,202 @@ try {
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             margin-bottom: 30px;
+            width: calc(100% - 40px);
         }
 
         .stat-card {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        .stat-card p {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #007bff;
+            font-weight: 600;
         }
 
         .create-form {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-bottom: 30px;
         }
 
         .form-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            gap: 25px;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #444;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 10px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #007bff;
+            outline: none;
         }
 
         .assignments-table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 0;
             background: white;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .assignments-table th,
         .assignments-table td {
-            padding: 12px;
+            padding: 15px;
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #eee;
         }
 
         .assignments-table th {
             background-color: #007bff;
             color: white;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
         }
 
-        .priority-High { color: #dc3545; }
-        .priority-Medium { color: #ffc107; }
-        .priority-Low { color: #28a745; }
+        .assignments-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .assignments-table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .priority-High { color: #dc3545; font-weight: 600; }
+        .priority-Medium { color: #ffc107; font-weight: 600; }
+        .priority-Low { color: #28a745; font-weight: 600; }
 
         .status-select {
-            padding: 5px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 2px solid #e0e0e0;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .status-select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
         }
 
         .action-buttons button {
-            padding: 5px 10px;
-            margin: 0 5px;
+            padding: 8px 16px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
         }
 
-        .edit-btn { background-color: #ffc107; }
-        .delete-btn { background-color: #dc3545; color: white; }
+        .edit-btn { 
+            background-color: #ffc107;
+            color: #000;
+        }
+
+        .delete-btn { 
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .edit-btn:hover,
+        .delete-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Submit button styling */
+        .submit-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                margin-left: 220px;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 0;
+                padding: 15px;
+            }
+
+            .stats-container,
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .assignments-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
     </style>
 </head>
 <body>

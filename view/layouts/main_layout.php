@@ -1,6 +1,13 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id'])) {
+// Make session available globally
+global $_SESSION;
+
+error_log("Main layout - Current session: " . print_r($_SESSION, true));
+
+// Check if user is logged in
+if (!isset($_SESSION['user_id']) && basename($_SERVER['PHP_SELF']) !== 'login.php' && basename($_SERVER['PHP_SELF']) !== 'signup.php') {
+    error_log("User not logged in, redirecting from: " . $_SERVER['PHP_SELF']);
     header('Location: login.php');
     exit();
 }

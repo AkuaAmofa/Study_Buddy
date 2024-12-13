@@ -1,77 +1,48 @@
 <?php
 session_start();
 require_once '../db/db.php';
+require_once '../db/logger.php';
+
+$error_message = '';
+$success_message = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $conn = get_db_connection();
         
-        // Get and sanitize input data
-        $username = trim(filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING));
-        $email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
-        $firstName = trim(filter_input(INPUT_POST, 'first_name', FILTER_SANITIZE_STRING));
-        $lastName = trim(filter_input(INPUT_POST, 'last_name', FILTER_SANITIZE_STRING));
-        $password = $_POST['password'];
-
-        // Validate input data
-        if (empty($username) || empty($email) || empty($firstName) || empty($lastName) || empty($password)) {
-            throw new Exception('All fields are required');
-        }
-
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            throw new Exception('Invalid email format');
-        }
-
-        if (strlen($password) < 8) {
-            throw new Exception('Password must be at least 8 characters long');
-        }
-
-        // Check if username already exists
-        $stmt = $conn->prepare("SELECT user_id FROM users WHERE username = ?");
-        $stmt->execute([$username]);
-        if ($stmt->rowCount() > 0) {
-            throw new Exception('Username already exists');
-        }
-
-        // Check if email already exists
-        $stmt = $conn->prepare("SELECT user_id FROM users WHERE email = ?");
-        $stmt->execute([$email]);
-        if ($stmt->rowCount() > 0) {
-            throw new Exception('Email already registered');
-        }
-
-        // Hash password
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-        // Insert new user
+        // Insert new user data
         $stmt = $conn->prepare("
-            INSERT INTO users (username, email, password, first_name, last_name) 
-            VALUES (?, ?, ?, ?, ?)
+            INSERT INTO users (username, email, password, first_name, last_name, major, interests, profile_picture)
+            VALUES (:username, :email, :password, :first_name, :last_name, :major, :interests, :profile_picture)
         ");
-
         $stmt->execute([
-            $username,
-            $email,
-            $hashedPassword,
-            $firstName,
-            $lastName
+            'username' => $_POST['username'],
+            'email' => $_POST['email'],
+            'password' => password_hash($_POST['password'], PASSWORD_BCRYPT),
+            'first_name' => $_POST['first_name'],
+            'last_name' => $_POST['last_name'],
+            'major' => $_POST['major'],
+            'interests' => $_POST['interests'],
+            'profile_picture' => $_FILES['profile_picture']['name']
         ]);
 
-        // Set success message in session
-        $_SESSION['registration_success'] = true;
-        $_SESSION['message'] = 'Registration successful! Please login.';
-        
-        // Redirect to login page
-        header('Location: login.php');
-        exit();
+        // Handle file upload
+        if (isset($_FILES['profile_picture'])) {
+            $target_dir = "../uploads/";
+            $target_file = $target_dir . basename($_FILES["profile_picture"]["name"]);
+            move_uploaded_file($_FILES["profile_picture"]["tmp_name"], $target_file);
+        }
 
-    } catch (PDOException $e) {
-        $_SESSION['error'] = 'Database error: Please try again later';
-        error_log("Database error in signup: " . $e->getMessage());
+        // Redirect to home.php after successful signup
+        header('Location: home.php');
+        exit();
+        
     } catch (Exception $e) {
-        $_SESSION['error'] = $e->getMessage();
+        $error_message = "An error occurred during signup: " . $e->getMessage();
+        log_message("Error in signup page: " . $e->getMessage(), 'ERROR');
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -79,75 +50,99 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Buddy - Sign Up</title>
-    <link rel="stylesheet" href="../css/signup.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-   
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <section class="signup-section">
-        <h1>Create Your Account</h1>
-        <form id="register" class="input" method="POST" action="signup.php">
-            <input type="text" class="input-place" name="username" placeholder="Username" required>
-            <input type="email" class="input-place" name="email" placeholder="Email" required>
-            <input type="text" class="input-place" name="first_name" placeholder="First Name" required>
-            <input type="text" class="input-place" name="last_name" placeholder="Last Name" required>
-            <input type="password" class="input-place" name="password" placeholder="Password" required>
-            <input type="password" class="input-place" name="confirmPassword" placeholder="Confirm Password" required>
-            <button type="submit" class="sumbit-btn">Sign Up</button>
-            <?php if(isset($_SESSION['error'])): ?>
-                <div class="error-message" style="color: #dc3545;">
-                    <?php 
-                        echo $_SESSION['error'];
-                        unset($_SESSION['error']);
-                    ?>
-                </div>
-            <?php endif; ?>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <?php if (!empty($error_message)): ?>
+            <div class="error-message"><?php echo htmlspecialchars($error_message); ?></div>
+        <?php endif; ?>
+        <?php if (!empty($success_message)): ?>
+            <div class="success-message"><?php echo htmlspecialchars($success_message); ?></div>
+        <?php endif; ?>
+
+        <form method="POST" enctype="multipart/form-data" onsubmit="return validateForm();">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" id="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" id="last_name" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" name="confirm_password" id="confirm_password" required>
+            </div>
+            <div class="form-group">
+                <label for="major">Major:</label>
+                <input type="text" name="major" id="major">
+            </div>
+            <div class="form-group">
+                <label for="interests">Interests:</label>
+                <textarea name="interests" id="interests"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="profile_picture">Profile Picture:</label>
+                <input type="file" name="profile_picture" id="profile_picture" accept="image/*">
+            </div>
+            <button type="submit" class="action-button">Sign Up</button>
         </form>
-    </section>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script>
-        document.getElementById('register').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const submitButton = this.querySelector('.sumbit-btn');
-            const errorDiv = document.getElementById('registerError');
-            
-            // Show loading state
-            submitButton.textContent = 'Creating Account...';
-            submitButton.disabled = true;
+        function validateForm() {
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+            const firstName = document.getElementById('first_name').value;
+            const lastName = document.getElementById('last_name').value;
 
-            fetch(window.location.href, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // Show success message
-                    errorDiv.style.color = '#28a745';
-                    errorDiv.textContent = data.message;
-                    
-                    // Redirect to login page
-                    window.location.href = data.redirect;
-                } else {
-                    // Show error message
-                    errorDiv.style.color = '#dc3545';
-                    errorDiv.textContent = data.message;
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Sign Up';
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                errorDiv.style.color = '#dc3545';
-                errorDiv.textContent = 'An error occurred. Please try again.';
-                submitButton.disabled = false;
-                submitButton.textContent = 'Sign Up';
-            });
-        });
+            if (username.length < 3) {
+                alert('Username must be at least 3 characters long.');
+                return false;
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/;
+            if (!passwordPattern.test(password)) {
+                alert('Password must be at least 8 characters long, contain at least one uppercase letter, and one special character.');
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                return false;
+            }
+
+            if (firstName.trim() === '' || lastName.trim() === '') {
+                alert('First Name and Last Name cannot be empty.');
+                return false;
+            }
+
+            return true;
+        }
     </script>
 </body>
 </html>
+
