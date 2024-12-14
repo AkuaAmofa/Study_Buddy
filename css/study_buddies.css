@@ -1,0 +1,202 @@
+/* Import base variables */
+@import 'home.css';
+
+/* Study Network Layout */
+.study-network {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--base-spacing);
+    background-color: var(--light-text-color);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+}
+
+/* Header Section */
+.network-header {
+    text-align: center;
+    margin-bottom: var(--large-spacing);
+}
+
+.network-header h1 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: var(--small-spacing);
+    font-weight: 600;
+}
+
+.network-header p {
+    color: var(--muted-text);
+    font-size: 1.1rem;
+}
+
+/* Content Sections */
+.network-section {
+    background: var(--light-text-color);
+    padding: var(--large-spacing);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: var(--large-spacing);
+}
+
+.network-section h2 {
+    display: flex;
+    align-items: center;
+    gap: var(--small-spacing);
+    color: var(--text-color);
+    font-size: 1.25rem;
+    margin-bottom: var(--large-spacing);
+    font-weight: 600;
+}
+
+.network-section h2 i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+/* User Grid Layout */
+.user-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--large-spacing);
+}
+
+/* User Cards */
+.user-card {
+    background: var(--light-text-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid var(--background-color);
+}
+
+.user-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow);
+}
+
+.user-card-header {
+    position: relative;
+    padding: var(--base-spacing);
+    text-align: center;
+    background: var(--background-color);
+}
+
+.user-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--light-text-color);
+    box-shadow: var(--card-shadow);
+}
+
+.match-score {
+    position: absolute;
+    top: var(--base-spacing);
+    right: var(--base-spacing);
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.user-card-body {
+    padding: var(--base-spacing);
+}
+
+.user-card-body h3 {
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: var(--small-spacing);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: var(--small-spacing);
+    color: var(--muted-text);
+    font-size: 0.875rem;
+    margin-bottom: var(--small-spacing);
+}
+
+.user-info i {
+    color: var(--primary-color);
+}
+
+.user-card-footer {
+    padding: var(--base-spacing);
+    border-top: 1px solid var(--background-color);
+}
+
+/* Connection Status Badges */
+.connection-status {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--small-spacing);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.status-pending {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.status-connected {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+/* Empty States */
+.empty-state {
+    text-align: center;
+    padding: var(--large-spacing);
+    color: var(--muted-text);
+}
+
+.empty-state i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: var(--base-spacing);
+}
+
+.empty-state p {
+    margin-bottom: var(--base-spacing);
+    font-size: 0.875rem;
+}
+
+/* Action Buttons */
+.connect-button {
+    width: 100%;
+    padding: var(--base-spacing);
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small-spacing);
+}
+
+.connect-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.connect-button.pending {
+    background-color: var(--background-color);
+    color: var(--muted-text);
+    cursor: not-allowed;
+}
+
+.connect-button.connected {
+    background-color: var(--accent-color);
+}

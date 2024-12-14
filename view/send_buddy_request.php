@@ -3,9 +3,10 @@ session_start();
 require_once '../db/db.php';
 require_once '../db/logger.php';
 
+header('Content-Type: application/json');
+
 // Ensure user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header('Content-Type: application/json');
     echo json_encode(['success' => false, 'message' => 'User not logged in']);
     exit();
 }
@@ -34,13 +35,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $conn->prepare("
             SELECT status 
             FROM studybuddyconnections 
-            WHERE (user_id1 = :user_id1 AND user_id2 = :user_id2)
-            OR (user_id1 = :user_id2 AND user_id2 = :user_id1)
+            WHERE (user_id1 = ? AND user_id2 = ?)
+            OR (user_id1 = ? AND user_id2 = ?)
         ");
-        $stmt->execute([
-            'user_id1' => $user_id1,
-            'user_id2' => $user_id2
-        ]);
+        $stmt->execute([$user_id1, $user_id2, $user_id2, $user_id1]);
         
         if ($stmt->fetch()) {
             throw new Exception('Connection already exists');
@@ -48,22 +46,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Create new connection request
         $stmt = $conn->prepare("
-            INSERT INTO studybuddyconnections (user_id1, user_id2, status, created_at)
-            VALUES (:user_id1, :user_id2, 'Pending', NOW())
+            INSERT INTO studybuddyconnections (user_id1, user_id2, status)
+            VALUES (?, ?, 'Pending')
         ");
         
-        $stmt->execute([
-            'user_id1' => $user_id1,
-            'user_id2' => $user_id2
-        ]);
+        $stmt->execute([$user_id1, $user_id2]);
 
         log_message("Study buddy request sent from user $user_id1 to user $user_id2", 'INFO');
         
-        echo json_encode(['success' => true, 'message' => 'Request sent successfully']);
+        echo json_encode([
+            'success' => true, 
+            'message' => 'Request sent successfully'
+        ]);
 
     } catch (Exception $e) {
         log_message("Error sending study buddy request: " . $e->getMessage(), 'ERROR');
-        echo json_encode(['success' => false, 'message' => $e->getMessage()]);
+        echo json_encode([
+            'success' => false, 
+            'message' => $e->getMessage()
+        ]);
     }
     exit();
-} 
+}
+
+// If not POST request
+echo json_encode([
+    'success' => false, 
+    'message' => 'Invalid request method'
+]);
+exit();
+?>

@@ -64,7 +64,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo json_encode([
             'success' => true,
-            'message' => 'Message sent successfully'
+            'message' => 'Message sent successfully',
+            'timestamp' => date('Y-m-d H:i:s')
         ]);
 
     } catch (Exception $e) {

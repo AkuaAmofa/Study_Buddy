@@ -4,21 +4,10 @@ require_once '../db/db.php';
 require_once '../db/logger.php';
 
 // Initialize variables
-$recent_assignments = [];
-$recent_connections = [];
-$recent_resources = [];
-$error_message = '';
-$first_name = '';
-
-$page_title = 'Dashboard';
+$page_title = 'Home';
 $current_page = 'home';
 
-ob_start();
-$content = ob_get_clean();
-
-require_once 'layouts/main_layout.php';
-
-// Ensure user is logged in
+// Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
@@ -27,184 +16,266 @@ if (!isset($_SESSION['user_id'])) {
 try {
     $conn = get_db_connection();
     
-    // Get user's first name
-    $stmt = $conn->prepare("
-        SELECT first_name 
-        FROM users 
-        WHERE user_id = :user_id
-    ");
-    
-    $stmt->execute(['user_id' => $_SESSION['user_id']]);
+    // Get user's name
+    $stmt = $conn->prepare("SELECT first_name FROM users WHERE user_id = ?");
+    $stmt->execute([$_SESSION['user_id']]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-    $first_name = $user['first_name'] ?? $_SESSION['username'];
-    
-    // Debug: Log the first name
-    log_message("First name fetched: " . $first_name, 'DEBUG');
-    
-    // Fetch recent assignments
+    $first_name = $user['first_name'];
+
+    // Get recent assignments
     $stmt = $conn->prepare("
-        SELECT 
-            assignment_id,
-            title,
-            course,
-            due_date,
-            priority,
-            status,
-            created_at
-        FROM assignments 
-        WHERE user_id = :user_id 
-        ORDER BY 
-            CASE 
-                WHEN due_date >= CURRENT_DATE THEN 0
-                ELSE 1
-            END,
-            due_date ASC,
-            CASE 
-                WHEN priority = 'High' THEN 1
-                WHEN priority = 'Medium' THEN 2
-                WHEN priority = 'Low' THEN 3
-            END
-        LIMIT 5
+        SELECT * FROM assignments 
+        WHERE user_id = ? 
+        ORDER BY due_date ASC 
+        LIMIT 2
     ");
-    
-    $stmt->execute(['user_id' => $_SESSION['user_id']]);
-    $recent_assignments = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
-    // Fetch recent connections
-    // ... your existing connections query ...
+    $stmt->execute([$_SESSION['user_id']]);
+    $assignments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 } catch (Exception $e) {
-    log_message("Error fetching data: " . $e->getMessage(), 'ERROR');
-    $error_message = "An error occurred while loading the page.";
-    $first_name = $_SESSION['username'];
+    log_message("Error in home page: " . $e->getMessage(), 'ERROR');
+    $error_message = "An error occurred while loading the dashboard.";
 }
 
-// Debug: Check the value before display
-log_message("First name before display: " . $first_name, 'DEBUG');
+ob_start();
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Buddy - Dashboard</title>
-    <link rel="stylesheet" href="../css/home.css">
-
-
-</head>
-<body>
-    <div class="sidebar">
-        <div class="sidebar-logo">Study Buddy</div>
-        <nav class="sidebar-menu">
-            <a href="home.php" class="menu-item active">
-                <i class='bx bx-home'></i> Home
-            </a>
-            <a href="assignments.php" class="menu-item">
-                <i class='bx bx-task'></i> Assignments
-            </a>
-            <a href="study-buddies.php" class="menu-item">
-                <i class='bx bx-user'></i> Study Buddies
-            </a>
-            <a href="resources.php" class="menu-item">
-                <i class='bx bx-book'></i> Resources
-            </a>
-            <a href="logout.php" class="menu-item">
-                <i class='bx bx-log-out'></i> Logout
-            </a>
-        </nav>
+<div class="dashboard-container">
+    <h1>Welcome, <?php echo htmlspecialchars($first_name); ?>!</h1>
+    
+    <div class="action-buttons">
+        <a href="assignments.php" class="action-button">
+            <i class='bx bx-list-plus'></i> Manage Assignments
+        </a>
+        <a href="study-buddies.php" class="action-button">
+            <i class='bx bx-user-plus'></i> Find Study Buddies
+        </a>
+        <a href="resources.php" class="action-button">
+            <i class='bx bx-book-open'></i> Access Resources
+        </a>
     </div>
 
-    <div class="main-content">
-        <div class="dashboard">
-            <h1>Welcome, <?php echo htmlspecialchars($first_name); ?>!</h1>
-            
-            <div class="controls">
-                <button class="action-button" onclick="window.location.href='assignments.php'">Manage Assignments</button>
-                <button class="action-button" onclick="window.location.href='study-buddies.php'">Find Study Buddies</button>
-                <button class="action-button" onclick="window.location.href='resources.php'">Access Resources</button>
+    <div class="dashboard-grid">
+        <!-- Recent Assignments Section -->
+        <div class="dashboard-card">
+            <h2>Recent Assignments</h2>
+            <?php if (empty($assignments)): ?>
+                <p class="empty-state">No assignments yet. Start by adding one!</p>
+            <?php else: ?>
+                <?php foreach ($assignments as $assignment): ?>
+                    <div class="assignment-item">
+                        <div class="assignment-header">
+                            <h3><?php echo htmlspecialchars($assignment['title']); ?></h3>
+                            <span class="status <?php echo strtolower($assignment['status']); ?>">
+                                <?php echo htmlspecialchars($assignment['status']); ?>
+                            </span>
+                        </div>
+                        <p class="course"><?php echo htmlspecialchars($assignment['course']); ?></p>
+                        <p class="due-date">Due: <?php echo date('M d, Y', strtotime($assignment['due_date'])); ?></p>
+                        <span class="priority <?php echo strtolower($assignment['priority']); ?>">
+                            <?php echo htmlspecialchars($assignment['priority']); ?> Priority
+                        </span>
+                    </div>
+                <?php endforeach; ?>
+                <a href="assignments.php" class="view-all">View All Assignments</a>
+            <?php endif; ?>
+        </div>
+
+        <!-- Study Buddy Activities Section -->
+        <div class="dashboard-card">
+            <h2>Study Buddy Activities</h2>
+            <div class="empty-state">
+                <p>No recent study buddy activities.</p>
+                <p>Start connecting with other students!</p>
+                <a href="study-buddies.php" class="action-button">
+                    Find Study Buddies
+                </a>
             </div>
+        </div>
 
-            <div class="split-container">
-                <div class="feed-section">
-                    <h2>Recent Assignments</h2>
-                    <?php if (empty($recent_assignments)): ?>
-                        <div class="feed-item empty-state">
-                            <p>No assignments yet. Start by creating your first assignment!</p>
-                            <a href="assignments.php" class="action-button">Create Assignment</a>
-                        </div>
-                    <?php else: ?>
-                        <?php foreach ($recent_assignments as $assignment): ?>
-                            <div class="feed-item assignment-card">
-                                <div class="assignment-status <?php echo strtolower(str_replace(' ', '-', $assignment['status'])); ?>">
-                                    <?php echo htmlspecialchars($assignment['status']); ?>
-                                </div>
-                                <div class="assignment-content">
-                                    <h4><?php echo htmlspecialchars($assignment['title']); ?></h4>
-                                    <p class="course"><?php echo htmlspecialchars($assignment['course']); ?></p>
-                                    <div class="assignment-details">
-                                        <span class="due-date">
-                                            Due: <?php echo date('M d, Y', strtotime($assignment['due_date'])); ?>
-                                        </span>
-                                        <span class="priority <?php echo strtolower($assignment['priority']); ?>">
-                                            <?php echo htmlspecialchars($assignment['priority']); ?> Priority
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                        <div class="view-all">
-                            <a href="assignments.php" class="action-button">View All Assignments</a>
-                        </div>
-                    <?php endif; ?>
-                </div>
-
-                <div class="feed-section">
-                    <h2>Study Buddy Activities</h2>
-                    <?php if (empty($recent_connections)): ?>
-                        <div class="feed-item empty-state">
-                            <p>No recent study buddy activities. Start connecting with other students!</p>
-                            <a href="study-buddies.php" class="action-button">Find Study Buddies</a>
-                        </div>
-                    <?php else: ?>
-                        <?php foreach ($recent_connections as $connection): ?>
-                            <div class="feed-item">
-                                <img src="<?php echo htmlspecialchars($connection['profile_picture'] ?? '../assets/default-profile.png'); ?>" 
-                                     alt="Profile Picture" class="profile-pic">
-                                <div class="feed-content">
-                                    <h4><?php echo htmlspecialchars($connection['username']); ?></h4>
-                                    <?php if ($connection['status'] === 'Pending'): ?>
-                                        <p class="status pending">Pending Connection Request</p>
-                                        <p class="timestamp">Sent: <?php echo date('M d, Y', strtotime($connection['created_at'])); ?></p>
-                                    <?php else: ?>
-                                        <p class="status connected">Connected</p>
-                                        <p class="timestamp">Connected since: <?php echo date('M d, Y', strtotime($connection['matched_at'])); ?></p>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                </div>
-
-                <div class="feed-section">
-                    <h2>Recent Resources</h2>
-                    <?php if (empty($recent_resources)): ?>
-                        <div class="feed-item empty-state">
-                            <p>No resources yet. Start by adding study materials!</p>
-                            <a href="resources.php" class="action-button">Add Resources</a>
-                        </div>
-                    <?php else: ?>
-                        <?php foreach ($recent_resources as $resource): ?>
-                            <div class="feed-item">
-                                <h4><?php echo htmlspecialchars($resource['title']); ?></h4>
-                                <p>Added: <?php echo htmlspecialchars($resource['uploaded_at']); ?></p>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                </div>
+        <!-- Recent Resources Section -->
+        <div class="dashboard-card">
+            <h2>Recent Resources</h2>
+            <div class="empty-state">
+                <p>No resources yet. Start by adding study materials!</p>
+                <a href="resources.php" class="action-button">
+                    Add Resources
+                </a>
             </div>
         </div>
     </div>
-</body>
-</html>
+</div>
+
+<style>
+.dashboard-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dashboard-container h1 {
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.action-button:hover {
+    background: #1976D2;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.dashboard-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.dashboard-card h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+}
+
+.empty-state {
+    text-align: center;
+    color: #666;
+    padding: 2rem 0;
+}
+
+.empty-state p {
+    margin-bottom: 1rem;
+}
+
+.assignment-item {
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.assignment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 0.5rem;
+}
+
+.assignment-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+.status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+}
+
+.status.not-started {
+    background: #FFF3E0;
+    color: #F57C00;
+}
+
+.status.in-progress {
+    background: #E3F2FD;
+    color: #1976D2;
+}
+
+.status.completed {
+    background: #E8F5E9;
+    color: #388E3C;
+}
+
+.course {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.due-date {
+    color: #666;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.priority {
+    display: inline-block;
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.priority.low {
+    background: #E8F5E9;
+    color: #388E3C;
+}
+
+.priority.medium {
+    background: #FFF3E0;
+    color: #F57C00;
+}
+
+.priority.high {
+    background: #FFEBEE;
+    color: #D32F2F;
+}
+
+.view-all {
+    display: block;
+    text-align: center;
+    color: #2196F3;
+    text-decoration: none;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 1rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+</style>
+
+<?php
+$content = ob_get_clean();
+require_once 'layouts/main_layout.php';
+?>

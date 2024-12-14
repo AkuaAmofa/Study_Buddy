@@ -55,65 +55,95 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat with <?php echo htmlspecialchars($chat_partner['username']); ?></title>
     <style>
-        /* Add your chat UI styles here */
         .chat-container {
             max-width: 800px;
             margin: 20px auto;
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
         .chat-header {
-            padding: 15px;
+            padding: 20px;
+            background: #f8f9fa;
             border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .chat-header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
         }
         .chat-messages {
-            height: 400px;
+            height: 500px;
             overflow-y: auto;
-            padding: 15px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
         .message {
-            margin-bottom: 10px;
-            padding: 10px;
-            border-radius: 8px;
+            max-width: 70%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            position: relative;
         }
         .message.sent {
-            background: #007bff;
+            background: #2196F3;
             color: white;
-            margin-left: 20%;
+            margin-left: auto;
+            border-bottom-right-radius: 4px;
         }
         .message.received {
-            background: #e9ecef;
-            margin-right: 20%;
+            background: #f0f2f5;
+            color: #1c1e21;
+            margin-right: auto;
+            border-bottom-left-radius: 4px;
+        }
+        .message-time {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-top: 4px;
         }
         .chat-input {
-            padding: 15px;
+            padding: 20px;
+            background: #f8f9fa;
             border-top: 1px solid #eee;
         }
         .chat-input form {
             display: flex;
-            gap: 10px;
+            gap: 12px;
         }
         .chat-input input {
             flex: 1;
-            padding: 8px;
+            padding: 12px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 24px;
+            font-size: 1rem;
         }
         .chat-input button {
-            padding: 8px 20px;
-            background: #007bff;
+            padding: 12px 24px;
+            background: #2196F3;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 24px;
             cursor: pointer;
+            transition: background 0.2s;
+        }
+        .chat-input button:hover {
+            background: #1976D2;
         }
     </style>
 </head>
 <body>
     <div class="chat-container">
         <div class="chat-header">
-            <h2>Chat with <?php echo htmlspecialchars($chat_partner['username']); ?></h2>
+            <img src="<?php echo htmlspecialchars($chat_partner['profile_picture'] ?? '../assets/default-profile.png'); ?>" 
+                 alt="Profile">
+            <h2><?php echo htmlspecialchars($chat_partner['username']); ?></h2>
         </div>
         
         <div class="chat-messages" id="chat-messages">
@@ -122,8 +152,14 @@ try {
         
         <div class="chat-input">
             <form id="message-form">
-                <input type="text" id="message-input" placeholder="Type your message..." required>
-                <button type="submit">Send</button>
+                <input type="text" 
+                       id="message-input" 
+                       placeholder="Type your message..." 
+                       autocomplete="off" 
+                       required>
+                <button type="submit">
+                    <i class='bx bx-send'></i> Send
+                </button>
             </form>
         </div>
     </div>
@@ -169,10 +205,15 @@ try {
             });
         }
 
-        function appendMessage(message, type) {
+        function appendMessage(message, type, timestamp) {
             const messageDiv = document.createElement('div');
             messageDiv.className = `message ${type}`;
-            messageDiv.textContent = message;
+            messageDiv.innerHTML = `
+                ${message}
+                <div class="message-time">
+                    ${timestamp ? new Date(timestamp).toLocaleTimeString() : new Date().toLocaleTimeString()}
+                </div>
+            `;
             messagesContainer.appendChild(messageDiv);
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }

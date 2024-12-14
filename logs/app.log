@@ -763,3 +763,240 @@
 [2024-12-13 22:59:18] [DEBUG] First name before display: Princess
 [2024-12-13 22:59:19] [DEBUG] First name fetched: Princess
 [2024-12-13 22:59:19] [DEBUG] First name before display: Princess
+[2024-12-13 23:01:13] [DEBUG] First name fetched: Princess
+[2024-12-13 23:01:13] [DEBUG] First name before display: Princess
+[2024-12-13 23:01:14] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 23:01:16] [DEBUG] First name fetched: Princess
+[2024-12-13 23:01:16] [DEBUG] First name before display: Princess
+[2024-12-13 23:01:32] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 23:01:35] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 23:15:22] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 23:15:24] [DEBUG] First name fetched: Princess
+[2024-12-13 23:15:24] [DEBUG] First name before display: Princess
+[2024-12-13 23:15:26] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 23:43:59] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 23:58:49] [DEBUG] First name fetched: Princess
+[2024-12-13 23:58:49] [DEBUG] First name before display: Princess
+[2024-12-13 23:58:54] [ERROR] Error in study buddies page: User profile not found
+[2024-12-13 23:58:57] [DEBUG] First name fetched: Princess
+[2024-12-13 23:58:57] [DEBUG] First name before display: Princess
+[2024-12-13 23:59:02] [ERROR] Error in study buddies page: User profile not found
+[2024-12-14 00:02:00] [DEBUG] First name fetched: Princess
+[2024-12-14 00:02:00] [DEBUG] First name before display: Princess
+[2024-12-14 00:02:45] [DEBUG] First name fetched: Princess
+[2024-12-14 00:02:45] [DEBUG] First name before display: Princess
+[2024-12-14 00:02:45] [DEBUG] First name fetched: Princess
+[2024-12-14 00:02:45] [DEBUG] First name before display: Princess
+[2024-12-14 00:02:46] [DEBUG] First name fetched: Princess
+[2024-12-14 00:02:46] [DEBUG] First name before display: Princess
+[2024-12-14 00:02:46] [DEBUG] First name fetched: Princess
+[2024-12-14 00:02:46] [DEBUG] First name before display: Princess
+[2024-12-14 00:02:46] [DEBUG] First name fetched: Princess
+[2024-12-14 00:02:46] [DEBUG] First name before display: Princess
+[2024-12-14 00:03:02] [DEBUG] First name fetched: Princess
+[2024-12-14 00:03:02] [DEBUG] First name before display: Princess
+[2024-12-14 00:07:26] [DEBUG] First name fetched: Princess
+[2024-12-14 00:07:26] [DEBUG] First name before display: Princess
+[2024-12-14 00:07:49] [DEBUG] First name fetched: Princess
+[2024-12-14 00:07:49] [DEBUG] First name before display: Princess
+[2024-12-14 00:07:50] [ERROR] Error in study buddies page: User profile not found
+[2024-12-14 00:07:51] [DEBUG] First name fetched: Princess
+[2024-12-14 00:07:51] [DEBUG] First name before display: Princess
+[2024-12-14 00:07:53] [DEBUG] First name fetched: Princess
+[2024-12-14 00:07:53] [DEBUG] First name before display: Princess
+[2024-12-14 00:09:26] [DEBUG] First name fetched: Princess
+[2024-12-14 00:09:26] [DEBUG] First name before display: Princess
+[2024-12-14 00:11:50] [DEBUG] First name fetched: Princess
+[2024-12-14 00:11:50] [DEBUG] First name before display: Princess
+[2024-12-14 00:19:05] [DEBUG] First name fetched: Princess
+[2024-12-14 00:19:05] [DEBUG] First name before display: Princess
+[2024-12-14 00:19:25] [DEBUG] First name fetched: Princess
+[2024-12-14 00:19:25] [DEBUG] First name before display: Princess
+[2024-12-14 00:20:12] [DEBUG] First name fetched: Princess
+[2024-12-14 00:20:12] [DEBUG] First name before display: Princess
+[2024-12-14 00:20:18] [DEBUG] First name fetched: Princess
+[2024-12-14 00:20:18] [DEBUG] First name before display: Princess
+[2024-12-14 00:20:26] [DEBUG] First name fetched: Princess
+[2024-12-14 00:20:26] [DEBUG] First name before display: Princess
+[2024-12-14 00:20:59] [ERROR] Error in study buddies page: User profile not found
+[2024-12-14 00:21:04] [DEBUG] First name fetched: Princess
+[2024-12-14 00:21:04] [DEBUG] First name before display: Princess
+[2024-12-14 00:21:05] [ERROR] Error in study buddies page: User profile not found
+[2024-12-14 00:27:08] [ERROR] Error in study buddies page: User profile not found
+[2024-12-14 00:27:23] [ERROR] Error in study buddies page: User profile not found
+[2024-12-14 00:27:32] [ERROR] Error in study buddies page: User profile not found
+[2024-12-14 00:30:08] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:30:15] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:30:59] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:32:19] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:33:22] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:33:24] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:33:34] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:34:31] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:43:11] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:43:24] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:45:21] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:45:25] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:45:26] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:45:27] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:47:42] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:49:40] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:51:06] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:51:09] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:51:09] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:51:09] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:51:09] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 00:51:10] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 01:03:57] [ERROR] Error sending study buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 01:41:12] [ERROR] Error sending study buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 01:41:21] [DEBUG] First name fetched: Princess
+[2024-12-14 01:41:21] [DEBUG] First name before display: Princess
+[2024-12-14 01:41:56] [ERROR] Error sending study buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 01:44:35] [DEBUG] First name fetched: Princess
+[2024-12-14 01:44:35] [DEBUG] First name before display: Princess
+[2024-12-14 01:45:11] [ERROR] Error sending study buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 01:46:10] [ERROR] Error sending study buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 02:08:45] [ERROR] Error sending study buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 02:08:47] [ERROR] Error sending study buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 02:08:49] [ERROR] Error sending study buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 02:09:31] [DEBUG] Login attempt for: maame1
+[2024-12-14 02:09:31] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-14 02:09:31] [DEBUG] Verifying password for user: maame1
+[2024-12-14 02:09:31] [DEBUG] First name fetched: Maame
+[2024-12-14 02:09:31] [DEBUG] First name before display: Maame
+[2024-12-14 02:09:40] [ERROR] Error sending study buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 02:09:47] [DEBUG] First name fetched: Maame
+[2024-12-14 02:09:47] [DEBUG] First name before display: Maame
+[2024-12-14 02:09:55] [DEBUG] First name fetched: Maame
+[2024-12-14 02:09:55] [DEBUG] First name before display: Maame
+[2024-12-14 13:32:21] [DEBUG] Login attempt for: maame1
+[2024-12-14 13:32:21] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-14 13:32:21] [DEBUG] Verifying password for user: maame1
+[2024-12-14 13:32:22] [DEBUG] First name fetched: Maame
+[2024-12-14 13:32:22] [DEBUG] First name before display: Maame
+[2024-12-14 13:32:41] [DEBUG] First name fetched: Maame
+[2024-12-14 13:32:41] [DEBUG] First name before display: Maame
+[2024-12-14 13:32:54] [ERROR] Error sending study buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 13:37:17] [ERROR] Error sending study buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 13:38:32] [ERROR] Error sending study buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 13:38:34] [ERROR] Error sending study buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 13:38:54] [ERROR] Error sending study buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 13:39:07] [DEBUG] First name fetched: Maame
+[2024-12-14 13:39:07] [DEBUG] First name before display: Maame
+[2024-12-14 13:39:15] [DEBUG] First name fetched: Maame
+[2024-12-14 13:39:15] [DEBUG] First name before display: Maame
+[2024-12-14 13:45:57] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 13:45:59] [ERROR] Error in study buddies page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 13:53:20] [DEBUG] First name fetched: Maame
+[2024-12-14 13:53:20] [DEBUG] First name before display: Maame
+[2024-12-14 13:53:25] [DEBUG] First name fetched: Maame
+[2024-12-14 13:53:25] [DEBUG] First name before display: Maame
+[2024-12-14 13:53:27] [DEBUG] First name fetched: Maame
+[2024-12-14 13:53:27] [DEBUG] First name before display: Maame
+[2024-12-14 13:53:29] [DEBUG] First name fetched: Maame
+[2024-12-14 13:53:29] [DEBUG] First name before display: Maame
+[2024-12-14 13:54:50] [DEBUG] First name fetched: Maame
+[2024-12-14 13:54:50] [DEBUG] First name before display: Maame
+[2024-12-14 13:55:15] [DEBUG] First name fetched: Maame
+[2024-12-14 13:55:15] [DEBUG] First name before display: Maame
+[2024-12-14 13:55:30] [DEBUG] Login attempt for: PrincessC
+[2024-12-14 13:55:30] [DEBUG] Stored hash: $2y$10$F0T1rqFtTx1MiSz5XWr4BOqk3taPPHD8aG3nxQcdqUIq5FcvRvVl.
+[2024-12-14 13:55:30] [DEBUG] Verifying password for user: PrincessC
+[2024-12-14 13:55:30] [DEBUG] First name fetched: Princess
+[2024-12-14 13:55:30] [DEBUG] First name before display: Princess
+[2024-12-14 13:56:18] [DEBUG] First name fetched: Princess
+[2024-12-14 13:56:18] [DEBUG] First name before display: Princess
+[2024-12-14 13:59:53] [DEBUG] Login attempt for: maame1
+[2024-12-14 13:59:53] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-14 13:59:53] [DEBUG] Verifying password for user: maame1
+[2024-12-14 13:59:53] [DEBUG] First name fetched: Maame
+[2024-12-14 13:59:53] [DEBUG] First name before display: Maame
+[2024-12-14 14:00:02] [DEBUG] First name fetched: Maame
+[2024-12-14 14:00:02] [DEBUG] First name before display: Maame
+[2024-12-14 14:00:06] [DEBUG] First name fetched: Maame
+[2024-12-14 14:00:06] [DEBUG] First name before display: Maame
+[2024-12-14 14:00:22] [DEBUG] Login attempt for: maame1
+[2024-12-14 14:00:22] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-14 14:00:22] [DEBUG] Verifying password for user: maame1
+[2024-12-14 14:00:22] [DEBUG] First name fetched: Maame
+[2024-12-14 14:00:22] [DEBUG] First name before display: Maame
+[2024-12-14 14:00:41] [DEBUG] Login attempt for: maame1
+[2024-12-14 14:00:41] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-14 14:00:41] [DEBUG] Verifying password for user: maame1
+[2024-12-14 14:00:41] [DEBUG] First name fetched: Maame
+[2024-12-14 14:00:41] [DEBUG] First name before display: Maame
+[2024-12-14 14:00:54] [DEBUG] Login attempt for: maame1
+[2024-12-14 14:00:54] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-14 14:00:54] [DEBUG] Verifying password for user: maame1
+[2024-12-14 14:00:54] [DEBUG] First name fetched: Maame
+[2024-12-14 14:00:54] [DEBUG] First name before display: Maame
+[2024-12-14 14:03:20] [DEBUG] First name fetched: Maame
+[2024-12-14 14:03:20] [DEBUG] First name before display: Maame
+[2024-12-14 14:23:15] [INFO] Assignment ID: 4 status updated to: Completed
+[2024-12-14 14:23:18] [INFO] Assignment ID: 4 status updated to: Not Started
+[2024-12-14 14:23:26] [INFO] Assignment updated: Leadership Reflection
+[2024-12-14 14:23:37] [INFO] Assignment updated: Leadership Reflection
+[2024-12-14 14:24:53] [DEBUG] First name fetched: Maame
+[2024-12-14 14:24:53] [DEBUG] First name before display: Maame
+[2024-12-14 14:25:03] [DEBUG] First name fetched: Maame
+[2024-12-14 14:25:03] [DEBUG] First name before display: Maame
+[2024-12-14 14:25:06] [INFO] Study buddy request sent from user 10 to user 18
+[2024-12-14 14:25:42] [DEBUG] Login attempt for: maame1
+[2024-12-14 14:25:42] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-14 14:25:42] [DEBUG] Verifying password for user: maame1
+[2024-12-14 14:25:42] [DEBUG] First name fetched: Maame
+[2024-12-14 14:25:42] [DEBUG] First name before display: Maame
+[2024-12-14 14:42:29] [INFO] New assignment created: Maame's birthday gift by user ID: 10
+[2024-12-14 14:45:57] [INFO] Assignment updated: Maame's birthday gift
+[2024-12-14 14:46:05] [INFO] Assignment updated: Maame's birthday gift
+[2024-12-14 15:02:29] [INFO] Assignment deleted: Maame's birthday gift
+[2024-12-14 15:15:42] [DEBUG] First name fetched: Maame
+[2024-12-14 15:15:42] [DEBUG] First name before display: Maame
+[2024-12-14 15:15:49] [DEBUG] First name fetched: Maame
+[2024-12-14 15:15:49] [DEBUG] First name before display: Maame
+[2024-12-14 15:30:29] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_at' in 'order clause'
+[2024-12-14 15:30:36] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_at' in 'order clause'
+[2024-12-14 15:32:05] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_at' in 'order clause'
+[2024-12-14 15:32:06] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_at' in 'order clause'
+[2024-12-14 15:32:06] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_at' in 'order clause'
+[2024-12-14 15:32:19] [DEBUG] Login attempt for: maame1
+[2024-12-14 15:32:19] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-14 15:32:19] [DEBUG] Verifying password for user: maame1
+[2024-12-14 15:32:23] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_at' in 'order clause'
+[2024-12-14 15:32:47] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_at' in 'order clause'
+[2024-12-14 15:32:56] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_at' in 'order clause'
+[2024-12-14 15:33:39] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_at' in 'order clause'
+[2024-12-14 15:33:40] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_at' in 'order clause'
+[2024-12-14 15:33:43] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_at' in 'order clause'
+[2024-12-14 15:34:58] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_at' in 'order clause'
+[2024-12-14 15:34:58] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_at' in 'order clause'
+[2024-12-14 15:41:06] [DEBUG] Login attempt for: maame1
+[2024-12-14 15:41:06] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-14 15:41:06] [DEBUG] Verifying password for user: maame1
+[2024-12-14 15:41:28] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_at' in 'order clause'
+[2024-12-14 15:58:39] [ERROR] Error in resources page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_at' in 'order clause'
+[2024-12-14 16:21:26] [INFO] Resource deleted successfully: ID 3
+[2024-12-14 16:30:44] [ERROR] Error uploading resource: Missing required fields
+[2024-12-14 16:51:05] [INFO] Assignment ID: 4 status updated to: In Progress
+[2024-12-14 16:51:08] [INFO] Assignment ID: 4 status updated to: Completed
+[2024-12-14 16:51:10] [INFO] Assignment ID: 4 status updated to: In Progress
+[2024-12-14 16:51:12] [INFO] Assignment ID: 4 status updated to: Not Started
+[2024-12-14 16:51:16] [INFO] Assignment ID: 2 status updated to: Completed
+[2024-12-14 16:51:19] [INFO] Assignment ID: 2 status updated to: In Progress
+[2024-12-14 16:52:13] [INFO] Resource uploaded successfully: book
+[2024-12-14 16:52:21] [INFO] Resource deleted successfully: ID 4
+[2024-12-14 16:52:43] [INFO] Resource uploaded successfully: book
+[2024-12-14 16:52:49] [INFO] Resource downloaded: book
+[2024-12-14 17:44:54] [INFO] Resource uploaded successfully: final
+[2024-12-14 18:01:04] [DEBUG] Login attempt for: maame1
+[2024-12-14 18:01:04] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-14 18:01:04] [DEBUG] Verifying password for user: maame1
+[2024-12-14 18:01:04] [WARNING] Password verification failed for user: maame1
+[2024-12-14 18:01:13] [DEBUG] Login attempt for: maame1
+[2024-12-14 18:01:13] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-14 18:01:13] [DEBUG] Verifying password for user: maame1
+[2024-12-14 18:01:37] [DEBUG] Login attempt for: PrincessC
+[2024-12-14 18:01:37] [DEBUG] Stored hash: $2y$10$F0T1rqFtTx1MiSz5XWr4BOqk3taPPHD8aG3nxQcdqUIq5FcvRvVl.
+[2024-12-14 18:01:37] [DEBUG] Verifying password for user: PrincessC
+[2024-12-14 18:02:05] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-14 18:02:11] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number

@@ -1,342 +1,307 @@
 <?php
+session_start();
 require_once '../db/db.php';
 require_once '../db/logger.php';
 
-// Set page variables before including main layout
-$page_title = 'Study Buddies';
+// Initialize variables
+$page_title = 'Study Network';
 $current_page = 'study-buddies';
+$error_message = '';
+$success_message = '';
+$recommended_users = []; // Initialize as empty array
+$connections = []; // Initialize as empty array
 
-// Start output buffering
-ob_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
 
 try {
     $conn = get_db_connection();
     
-    // Get current user's profile
+    // Get current user's info
     $stmt = $conn->prepare("
         SELECT major, interests 
         FROM users 
-        WHERE user_id = :user_id
+        WHERE user_id = ?
     ");
-    $stmt->execute(['user_id' => $_SESSION['user_id'] ?? null]);
+    $stmt->execute([$_SESSION['user_id']]);
     $current_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if (!$current_user) {
-        throw new Exception('User profile not found');
+    if ($current_user) {  // Check if current user exists
+        // Fetch potential study buddies with compatibility scoring
+        $stmt = $conn->prepare("
+            SELECT 
+                u.user_id,
+                u.username,
+                u.first_name,
+                u.last_name,
+                u.major,
+                u.interests,
+                u.profile_picture,
+                CASE 
+                    WHEN u.major = ? THEN 50
+                    ELSE 0 
+                END +
+                CASE 
+                    WHEN u.interests LIKE ? THEN 50
+                    ELSE 0 
+                END as match_score,
+                COALESCE(
+                    (SELECT 
+                        CONCAT(status, ':', IF(user_id1 = ?, 'true', 'false')) 
+                     FROM studybuddyconnections 
+                     WHERE (user_id1 = ? AND user_id2 = u.user_id)
+                     OR (user_id1 = u.user_id AND user_id2 = ?)
+                     ORDER BY matched_at DESC 
+                     LIMIT 1
+                    ), 'none:false') as connection_info
+            FROM users u
+            WHERE u.user_id != ?
+            AND u.user_id NOT IN (
+                SELECT CASE 
+                    WHEN user_id1 = ? THEN user_id2
+                    ELSE user_id1
+                END
+                FROM studybuddyconnections
+                WHERE (user_id1 = ? OR user_id2 = ?)
+                AND status = 'Rejected'
+            )
+            ORDER BY match_score DESC, RAND()
+            LIMIT 12
+        ");
+        
+        $stmt->execute([
+            $current_user['major'],
+            '%' . $current_user['interests'] . '%',
+            $_SESSION['user_id'],
+            $_SESSION['user_id'],
+            $_SESSION['user_id'],
+            $_SESSION['user_id'],
+            $_SESSION['user_id'],
+            $_SESSION['user_id'],
+            $_SESSION['user_id']
+        ]);
+        $recommended_users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Process connection_info
+        foreach ($recommended_users as &$user) {
+            list($status, $is_sender) = explode(':', $user['connection_info']);
+            $user['connection_status'] = $status;
+            $user['is_sender'] = $is_sender === 'true';
+        }
+
+        // Fetch existing connections
+        $stmt = $conn->prepare("
+            SELECT 
+                u.user_id,
+                u.username,
+                u.first_name,
+                u.last_name,
+                u.major,
+                u.profile_picture,
+                u.interests,
+                sbc.matched_at
+            FROM studybuddyconnections sbc
+            JOIN users u ON (
+                CASE 
+                    WHEN sbc.user_id1 = ? THEN sbc.user_id2
+                    ELSE sbc.user_id1
+                END = u.user_id
+            )
+            WHERE (sbc.user_id1 = ? OR sbc.user_id2 = ?)
+            AND sbc.status = 'Accepted'
+            ORDER BY sbc.matched_at DESC
+        ");
+        
+        $stmt->execute([
+            $_SESSION['user_id'],
+            $_SESSION['user_id'],
+            $_SESSION['user_id']
+        ]);
+        $connections = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        $error_message = "User information not found.";
     }
-
-    // Fetch potential study buddies with compatibility score
-    // Excludes current user and already connected users
-    $stmt = $conn->prepare("
-        SELECT 
-            u.user_id,
-            u.username,
-            u.major,
-            u.interests,
-            u.profile_picture,
-            CASE 
-                WHEN u.major = :major THEN 50 
-                ELSE 0 
-            END + 
-            CASE 
-                WHEN u.interests LIKE CONCAT('%', :interests, '%') THEN 50 
-                ELSE 0 
-            END as compatibility_score
-        FROM users u
-        WHERE u.user_id != :user_id
-        AND u.user_id NOT IN (
-            SELECT user_id2 FROM studybuddyconnections 
-            WHERE user_id1 = :user_id
-            UNION
-            SELECT user_id1 FROM studybuddyconnections 
-            WHERE user_id2 = :user_id
-        )
-        HAVING compatibility_score > 0
-        ORDER BY compatibility_score DESC
-        LIMIT 10
-    ");
-    
-    $stmt->execute([
-        'user_id' => $_SESSION['user_id'] ?? null,
-        'major' => $current_user['major'],
-        'interests' => $current_user['interests']
-    ]);
-    $potential_buddies = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // Fetch pending requests
-    $stmt = $conn->prepare("
-        SELECT 
-            u.user_id,
-            u.username,
-            u.major,
-            u.profile_picture,
-            sbc.status,
-            sbc.connection_id
-        FROM studybuddyconnections sbc
-        JOIN users u ON u.user_id = sbc.user_id1
-        WHERE sbc.user_id2 = :user_id 
-        AND sbc.status = 'Pending'
-    ");
-    $stmt->execute(['user_id' => $_SESSION['user_id'] ?? null]);
-    $pending_requests = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // Fetch current connections
-    $stmt = $conn->prepare("
-        SELECT 
-            u.user_id,
-            u.username,
-            u.major,
-            u.profile_picture,
-            sbc.matched_at
-        FROM studybuddyconnections sbc
-        JOIN users u ON (u.user_id = sbc.user_id1 OR u.user_id = sbc.user_id2)
-        WHERE (sbc.user_id1 = :user_id OR sbc.user_id2 = :user_id)
-        AND u.user_id != :user_id
-        AND sbc.status = 'Accepted'
-    ");
-    $stmt->execute(['user_id' => $_SESSION['user_id'] ?? null]);
-    $current_connections = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 } catch (Exception $e) {
     log_message("Error in study buddies page: " . $e->getMessage(), 'ERROR');
-    $error_message = "An error occurred while loading the page. Please try again later.";
+    $error_message = "An error occurred while loading the page.";
 }
+
+// Include the layout
+$content = ob_start();
 ?>
 
-<style>
-    .container {
-        padding: 20px;
-    }
-
-    .section {
-        background: white;
-        padding: 20px;
-        border-radius: 8px;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .buddy-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
-        margin-top: 20px;
-    }
-
-    .buddy-card {
-        background: white;
-        border-radius: 8px;
-        padding: 15px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .profile-pic {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin: 0 auto 10px;
-        display: block;
-    }
-
-    .compatibility-score {
-        background: #007bff;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 15px;
-        display: inline-block;
-        margin-bottom: 10px;
-    }
-
-    .action-btn {
-        width: 100%;
-        padding: 8px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-top: 10px;
-    }
-
-    .connect-btn {
-        background-color: #28a745;
-        color: white;
-    }
-
-    .accept-btn {
-        background-color: #007bff;
-        color: white;
-    }
-
-    .reject-btn {
-        background-color: #dc3545;
-        color: white;
-    }
-
-    .message-btn {
-        background-color: #17a2b8;
-        color: white;
-    }
-
-    .error-message {
-        max-width: 1200px;
-        margin: 0 auto 20px;
-    }
-    .empty-state {
-        text-align: center;
-        padding: 20px;
-        color: #666;
-        background: #f8f9fa;
-        border-radius: 8px;
-        margin: 10px 0;
-    }
-</style>
-
-<div class="container">
-    <h1>Study Buddies</h1>
-
-    <!-- Pending Requests Section -->
-    <?php if (!empty($pending_requests)): ?>
-    <div class="section">
-        <h2>Pending Requests</h2>
-        <div class="buddy-grid">
-            <?php foreach ($pending_requests as $request): ?>
-            <div class="buddy-card">
-                <img src="<?php echo htmlspecialchars($request['profile_picture'] ?? '../assets/default-profile.png'); ?>" 
-                     alt="Profile Picture" class="profile-pic">
-                <h3><?php echo htmlspecialchars($request['username']); ?></h3>
-                <p>Major: <?php echo htmlspecialchars($request['major']); ?></p>
-                <button class="action-btn accept-btn" 
-                        onclick="handleRequest(<?php echo $request['connection_id']; ?>, 'accept')">
-                    Accept
-                </button>
-                <button class="action-btn reject-btn" 
-                        onclick="handleRequest(<?php echo $request['connection_id']; ?>, 'reject')">
-                    Reject
-                </button>
-            </div>
-            <?php endforeach; ?>
-        </div>
+<div class="dashboard">
+    <div class="dashboard-header">
+        <h1>Study Network</h1>
+        <p class="subtitle">Connect with fellow students and expand your study circle</p>
     </div>
+
+    <?php if (!empty($error_message)): ?>
+        <div class="error-message"><?php echo htmlspecialchars($error_message); ?></div>
     <?php endif; ?>
 
     <!-- Recommended Study Buddies Section -->
-    <div class="section">
-        <h2>Recommended Study Buddies</h2>
-        <div class="buddy-grid">
-            <?php if (empty($potential_buddies)): ?>
+    <section class="content-section">
+        <h2><i class='bx bx-user-plus'></i> Recommended Study Buddies</h2>
+        <div class="user-grid">
+            <?php if (empty($recommended_users)): ?>
                 <div class="empty-state">
-                    <p>No study buddy recommendations available at this time. Try updating your profile interests!</p>
+                    <p>No recommended study buddies available at the moment.</p>
                 </div>
             <?php else: ?>
-                <?php foreach ($potential_buddies as $buddy): ?>
-                <div class="buddy-card">
-                    <img src="<?php echo htmlspecialchars($buddy['profile_picture'] ?? '../assets/default-profile.png'); ?>" 
-                         alt="Profile Picture" class="profile-pic">
-                    <h3><?php echo htmlspecialchars($buddy['username']); ?></h3>
-                    <div class="compatibility-score">
-                        <?php echo $buddy['compatibility_score']; ?>% Match
+                <?php foreach ($recommended_users as $user): ?>
+                    <div class="user-card">
+                        <div class="user-card-header">
+                            <img src="<?php echo htmlspecialchars($user['profile_picture'] ?? '../assets/default-profile.png'); ?>" 
+                                 alt="Profile" class="user-avatar">
+                            <div class="match-score">
+                                <?php echo $user['match_score']; ?>% Match
+                            </div>
+                        </div>
+                        <div class="user-card-body">
+                            <h3><?php echo htmlspecialchars($user['first_name'] . ' ' . $user['last_name']); ?></h3>
+                            <p class="user-major">
+                                <i class='bx bx-book'></i>
+                                <?php echo htmlspecialchars($user['major'] ?? 'Major not specified'); ?>
+                            </p>
+                            <p class="user-interests">
+                                <i class='bx bx-star'></i>
+                                <?php echo htmlspecialchars($user['interests'] ?? 'Interests not specified'); ?>
+                            </p>
+                        </div>
+                        <div class="user-card-footer">
+    <?php if ($user['connection_status'] === 'none'): ?>
+        <button onclick="sendBuddyRequest(<?php echo $user['user_id']; ?>)" 
+                class="action-button">
+            <i class='bx bx-user-plus'></i> Connect
+        </button>
+    <?php elseif ($user['connection_status'] === 'Pending'): ?>
+        <?php if ($user['is_sender']): ?>
+            <button class="action-button pending" disabled>
+                <i class='bx bx-time'></i> Request Sent
+            </button>
+        <?php else: ?>
+            <div class="request-actions">
+                <button onclick="handleRequest(<?php echo $user['user_id']; ?>, 'accept')" 
+                        class="action-button accept">
+                    <i class='bx bx-check'></i> Accept
+                </button>
+                <button onclick="handleRequest(<?php echo $user['user_id']; ?>, 'reject')" 
+                        class="action-button reject">
+                    <i class='bx bx-x'></i> Reject
+                </button>
+            </div>
+        <?php endif; ?>
+    <?php endif; ?>
+</div>
                     </div>
-                    <p>Major: <?php echo htmlspecialchars($buddy['major']); ?></p>
-                    <p>Interests: <?php echo htmlspecialchars($buddy['interests']); ?></p>
-                    <button class="action-btn connect-btn" 
-                            onclick="sendRequest(<?php echo $buddy['user_id']; ?>)">
-                        Connect
-                    </button>
-                </div>
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
-    </div>
+    </section>
 
     <!-- Current Connections Section -->
-    <div class="section">
-        <h2>Your Study Buddies</h2>
-        <div class="buddy-grid">
-            <?php if (empty($current_connections)): ?>
+    <section class="content-section">
+        <h2><i class='bx bx-group'></i> Your Study Buddies</h2>
+        <div class="user-grid">
+            <?php if (empty($connections)): ?>
                 <div class="empty-state">
-                    <p>You haven't connected with any study buddies yet. Try sending some connection requests!</p>
+                    <p>You haven't connected with any study buddies yet.</p>
+                    <p>Start by sending connection requests to fellow students!</p>
                 </div>
             <?php else: ?>
-                <?php foreach ($current_connections as $connection): ?>
-                <div class="buddy-card">
-                    <img src="<?php echo htmlspecialchars($connection['profile_picture'] ?? '../assets/default-profile.png'); ?>" 
-                         alt="Profile Picture" class="profile-pic">
-                    <h3><?php echo htmlspecialchars($connection['username']); ?></h3>
-                    <p>Major: <?php echo htmlspecialchars($connection['major']); ?></p>
-                    <p>Connected since: <?php echo date('M d, Y', strtotime($connection['matched_at'])); ?></p>
-                    <button class="action-btn message-btn" 
-                            onclick="openChat(<?php echo $connection['user_id']; ?>)">
-                        Message
-                    </button>
-                </div>
+                <?php foreach ($connections as $connection): ?>
+                    <div class="user-card">
+                        <div class="user-card-header">
+                            <img src="<?php echo htmlspecialchars($connection['profile_picture'] ?? '../assets/default-profile.png'); ?>" 
+                                 alt="Profile" class="user-avatar">
+                            <div class="connection-status">
+                                <i class='bx bx-check-circle'></i> Connected
+                            </div>
+                        </div>
+                        <div class="user-card-body">
+                            <h3><?php echo htmlspecialchars($connection['first_name'] . ' ' . $connection['last_name']); ?></h3>
+                            <p class="user-major">
+                                <i class='bx bx-book'></i>
+                                <?php echo htmlspecialchars($connection['major'] ?? 'Major not specified'); ?>
+                            </p>
+                            <p class="connection-info">
+                                <i class='bx bx-calendar'></i>
+                                Connected since: <?php echo date('M d, Y', strtotime($connection['matched_at'])); ?>
+                            </p>
+                        </div>
+                        <div class="user-card-footer">
+                            <button onclick="startChat(<?php echo $connection['user_id']; ?>)" 
+                                    class="action-button">
+                                <i class='bx bx-message-square-dots'></i> Message
+                            </button>
+                        </div>
+                    </div>
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
-    </div>
+    </section>
 </div>
 
 <script>
-    function sendRequest(userId) {
-        fetch('send_buddy_request.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                user_id2: userId
-            })
+function sendBuddyRequest(userId) {
+    fetch('send_buddy_request.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            user_id2: userId
         })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert('Request sent successfully!');
-                location.reload();
-            } else {
-                alert('Error sending request: ' + data.message);
-            }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            location.reload(); // Reload the page to show updated status
+        } else {
+            alert(data.message || 'An error occurred');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while sending the request');
+    });
+}
+
+function handleRequest(userId, action) {
+    fetch('handle_request.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            user_id: userId,
+            action: action
         })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Error sending request');
-        });
-    }
-
-        function handleRequest(connectionId, action) {
-            fetch('handle_buddy_request.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    connection_id: connectionId,
-                    action: action
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert(action === 'accept' ? 'Request accepted!' : 'Request rejected');
-                    location.reload();
-                } else {
-                    alert('Error handling request: ' + data.message);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Error handling request');
-            });
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            location.reload();
+        } else {
+            alert(data.message || 'An error occurred');
         }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while handling the request');
+    });
+}
 
-        function openChat(userId) {
-            // Implement chat functionality or redirect to chat page
-            window.location.href = `chat.php?user_id=${userId}`;
-        }
-    </script>
+function startChat(userId) {
+    window.location.href = `chat.php?user_id=${userId}`;
+}
+</script>
 
 <?php
-// Get the buffered content
 $content = ob_get_clean();
-
-// Include the main layout which will use $content
 require_once 'layouts/main_layout.php';
 ?>
