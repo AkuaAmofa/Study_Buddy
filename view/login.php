@@ -1,8 +1,13 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+session_start();
 require_once '../db/db.php';
 require_once '../db/logger.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    error_log("POST request received");
+    error_log("POST data: " . print_r($_POST, true));
     header('Content-Type: application/json');
     
     try {
@@ -18,13 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit;
         }
 
-        if (filter_var($loginInput, FILTER_VALIDATE_EMAIL)) {
-            $query = "SELECT user_id, username, email, password, is_admin, first_name, last_name 
-                     FROM users WHERE email = :loginInput";
-        } else {
-            $query = "SELECT user_id, username, email, password, is_admin, first_name, last_name 
-                     FROM users WHERE username = :loginInput";
-        }
+        $query = filter_var($loginInput, FILTER_VALIDATE_EMAIL) ?
+            "SELECT user_id, username, email, password, is_admin FROM users WHERE email = :loginInput" :
+            "SELECT user_id, username, email, password, is_admin FROM users WHERE username = :loginInput";
 
         $stmt = $conn->prepare($query);
         $stmt->execute(['loginInput' => $loginInput]);
@@ -46,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['email'] = $user['email'];
             $_SESSION['is_admin'] = (bool)$user['is_admin'];
             
-            $redirect = $_SESSION['is_admin'] ? 'admin/dashboard.php' : 'home.php';
+            $redirect = $_SESSION['is_admin'] ? '/admin/dashboard.php' : '/home.php';
             
             echo json_encode([
                 'success' => true,
@@ -57,7 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             log_message("Password verification failed for user: " . $user['username'], 'WARNING');
             echo json_encode(['success' => false, 'message' => 'Invalid email/username or password.']);
         }
-        
     } catch (Exception $e) {
         log_message("Login error: " . $e->getMessage(), 'ERROR');
         echo json_encode([
@@ -110,29 +110,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </div>
     </div>
-    <script>
-    document.getElementById('LogIn').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
-
-        const formData = new FormData(this);
-
-        fetch('login.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                window.location.href = data.redirect; // Redirect to the specified page
-            } else {
-                document.getElementById('errorMessage').textContent = data.message; // Display error message
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            document.getElementById('errorMessage').textContent = 'An error occurred. Please try again.';
-        });
-    });
-    </script>
+    <script src="js/login.js" defer></script>
 </body>
 </html>

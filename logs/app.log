@@ -1000,3 +1000,25 @@
 [2024-12-14 18:01:37] [DEBUG] Verifying password for user: PrincessC
 [2024-12-14 18:02:05] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number
 [2024-12-14 18:02:11] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-15 00:18:08] [DEBUG] Login attempt for: maame1
+[2024-12-15 00:18:08] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-15 00:18:08] [DEBUG] Verifying password for user: maame1
+[2024-12-15 00:18:56] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-15 00:19:07] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-15 01:22:57] [INFO] Assignment deleted: Webtech Final Project
+[2024-12-15 01:23:13] [INFO] Assignment ID: 4 status updated to: In Progress
+[2024-12-15 01:23:49] [INFO] New assignment created: Webtech Final by user ID: 10
+[2024-12-15 01:24:00] [INFO] Assignment updated: Leadership Reflection
+[2024-12-15 01:24:05] [INFO] Assignment ID: 6 status updated to: In Progress
+[2024-12-15 01:24:17] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-15 01:24:23] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-15 21:29:34] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2024-12-15 21:29:36] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2024-12-15 21:29:37] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2024-12-15 21:29:37] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2024-12-15 21:34:26] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2024-12-15 21:34:26] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2024-12-15 21:34:26] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2024-12-15 21:34:26] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2024-12-15 21:34:26] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2024-12-15 21:34:26] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2006] MySQL server has gone away

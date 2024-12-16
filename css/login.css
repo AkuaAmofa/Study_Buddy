@@ -1,4 +1,4 @@
-@import 'auth/auth-common.css';
+/* @import 'auth/auth-common.css'; */
 
 .login-form {
   max-width: 400px;
@@ -75,8 +75,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('../assets/images/study-background.jpg');
     background-position: center;
     background-size: cover;
 }
