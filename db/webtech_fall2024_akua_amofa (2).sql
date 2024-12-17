@@ -134,31 +134,32 @@ CREATE TABLE `users` (
   `interests` text DEFAULT NULL,
   `profile_picture` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `is_admin` tinyint(1) DEFAULT 0
+  `is_admin` tinyint(1) DEFAULT 0,
+  `is_active` tinyint(1) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `first_name`, `last_name`, `major`, `interests`, `profile_picture`, `created_at`, `is_admin`) VALUES
-(1, 'AAkua', 'amofaakuadede@gmail.com', '$2y$10$OUlWtNFbqsvNo/RIlCeROuFrTiF.1hXQurjDnTaeRU2JkNzl4Z3gm', 'akua', 'amofa', NULL, NULL, NULL, '2024-12-03 22:42:17', 0),
-(2, 'nanaamoako', 'nana.amoako@ashesi.edu.gh', '$2y$10$ciH/.5hDLY6taHt7ju7BpugEaEt71H19V5czOb8WAzzbPsoICqh3C', 'Nana', 'Amoako', NULL, NULL, NULL, '2024-12-04 22:44:37', 0),
-(3, 'maameyaa', 'maame@ashesi.edu.gh', '$2y$10$sdrSSWonuAuj8rer7I7/XO6bXSihGYVrQvPV6lSVOmHWkxxp1Gr7u', 'Maame', 'Yaa', NULL, NULL, NULL, '2024-12-04 22:46:39', 0),
-(4, 'elsielar', 'elsielartey0@gmail.com', '$2y$10$O3iF4WFwgevoFg0ppHTsoOCB1PbLPCAKxY8Tj144bylUQAFM7M0di', 'Elsie', 'Lartey', NULL, NULL, NULL, '2024-12-04 22:52:49', 0),
-(5, 'kwakuamoako', 'nana.kwaku@kumi.edu', '$2y$10$HG2h24OMoID/huIxCakkoOY6bgxa/5leSLH8xnGeooOcJXZHYD7uG', 'Kwaku', 'Amoako', NULL, NULL, NULL, '2024-12-04 23:11:50', 0),
-(6, 'AngelB', 'angelafia@gmail.com', '$2y$10$y.YwrfKFYsajwewdDIDWy.UfzkVDtOUpqzPXdu7FwLqzN4DA9LAPK', 'Angel', 'Amofa', NULL, NULL, NULL, '2024-12-04 23:19:10', 0),
-(7, 'akua', 'akuaserwaaamofa16@gmail.com', '$2y$10$D.6qIVp/zzaewIACG9q9KuumNp0ktKToNPYxs7adJu4yk1eJlEjf.', 'Akua', 'Amofa', NULL, NULL, NULL, '2024-12-06 11:52:30', 0),
-(8, 'king', 'king.acquah@ashesi.edu.gh', '$2y$10$dKENxeQTvkO9k9RutVqTE.q/YEZ0hOQYaBjcuCNFXYv34UXXAB73S', 'King', 'Acquah', NULL, NULL, NULL, '2024-12-09 21:23:29', 0),
-(9, 'Kiki', 'kiki@ashesi.edu.gh', '$2y$10$pOqlXir1HuECOLcJ406cZO3piV0x4UW6nEFaeg3rLq5cC8Rue9bkO', 'KAkua', 'Birago', NULL, NULL, NULL, '2024-12-09 22:32:29', 0),
-(10, 'maame1', 'maame@asheci.com', '$2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu', 'Maame', 'Sarps', 'MIS', 'Coding', NULL, '2024-12-10 12:01:31', 0),
-(11, 'kyekye', 'maamedanquah@gmai8l.com', '$2y$10$TW6.zBtbjc57Y4DqqeLcreO/tMytkku2DijGbwbTk03VoxkEkYmqK', 'Rabby', 'Danquah', NULL, NULL, NULL, '2024-12-10 20:52:14', 0),
-(13, 'admin', 'admin@studybuddy.com', '$2y$10$tH7KWupLPCRY2n81Yvcceexv5wZCHGsEIEJXQ9sIBkXgMxCSnl7YG', 'admin', 'user', NULL, NULL, NULL, '2024-12-11 21:15:03', 1),
-(14, 'pati1', 'pati@ashesi.edu.gh', '$2y$10$xtt4EkJQuF/phMHT.OvD/eiJ5.ciAWbkFld4qGbPYIX/ixv/NqMka', 'Pati', 'Dufie', NULL, NULL, NULL, '2024-12-12 16:21:57', 0),
-(15, 'Zoie1', 'zoie@ashesi.edu.gh', '$2y$10$lIu/jCvSFN6b/LsFb0WdAObNjaernikRcRhz0f6TyDNeTf80En0i2', 'Zioe', 'Atta', NULL, NULL, NULL, '2024-12-12 16:31:51', 0),
-(16, 'Naana', 'naana@gmail.com', '$2y$10$cvyhXjKhK3O3WFnFeIeYk.C.tUi6J0blGHkXUl48e.bV4LvKD/ZWa', 'Naana', 'Araba', NULL, NULL, NULL, '2024-12-12 16:33:46', 0),
-(17, 'Clifford', 'clifford@ashesi.edu.gh', '$2y$10$wKq3pyvNJwZ.8zfrDbhGuuZCxzFRKkx/omjFoDcmn1cREbTSAOwAK', 'Clifford', 'System', NULL, NULL, NULL, '2024-12-12 16:37:59', 0),
-(18, 'PrincessC', 'pricheryl10@gmail.com', '$2y$10$F0T1rqFtTx1MiSz5XWr4BOqk3taPPHD8aG3nxQcdqUIq5FcvRvVl.', 'Princess', 'Donkor', 'MIS', 'Coding', 'pexels-pixabay-301920.jpg', '2024-12-13 21:12:34', 0);
+INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `first_name`, `last_name`, `major`, `interests`, `profile_picture`, `created_at`, `is_admin`, `is_active`) VALUES
+(1, 'AAkua', 'amofaakuadede@gmail.com', '$2y$10$OUlWtNFbqsvNo/RIlCeROuFrTiF.1hXQurjDnTaeRU2JkNzl4Z3gm', 'akua', 'amofa', NULL, NULL, NULL, '2024-12-03 22:42:17', 0, 1),
+(2, 'nanaamoako', 'nana.amoako@ashesi.edu.gh', '$2y$10$ciH/.5hDLY6taHt7ju7BpugEaEt71H19V5czOb8WAzzbPsoICqh3C', 'Nana', 'Amoako', NULL, NULL, NULL, '2024-12-04 22:44:37', 0, 1),
+(3, 'maameyaa', 'maame@ashesi.edu.gh', '$2y$10$sdrSSWonuAuj8rer7I7/XO6bXSihGYVrQvPV6lSVOmHWkxxp1Gr7u', 'Maame', 'Yaa', NULL, NULL, NULL, '2024-12-04 22:46:39', 0, 1),
+(4, 'elsielar', 'elsielartey0@gmail.com', '$2y$10$O3iF4WFwgevoFg0ppHTsoOCB1PbLPCAKxY8Tj144bylUQAFM7M0di', 'Elsie', 'Lartey', NULL, NULL, NULL, '2024-12-04 22:52:49', 0, 1),
+(5, 'kwakuamoako', 'nana.kwaku@kumi.edu', '$2y$10$HG2h24OMoID/huIxCakkoOY6bgxa/5leSLH8xnGeooOcJXZHYD7uG', 'Kwaku', 'Amoako', NULL, NULL, NULL, '2024-12-04 23:11:50', 0, 1),
+(6, 'AngelB', 'angelafia@gmail.com', '$2y$10$y.YwrfKFYsajwewdDIDWy.UfzkVDtOUpqzPXdu7FwLqzN4DA9LAPK', 'Angel', 'Amofa', NULL, NULL, NULL, '2024-12-04 23:19:10', 0, 1),
+(7, 'akua', 'akuaserwaaamofa16@gmail.com', '$2y$10$D.6qIVp/zzaewIACG9q9KuumNp0ktKToNPYxs7adJu4yk1eJlEjf.', 'Akua', 'Amofa', NULL, NULL, NULL, '2024-12-06 11:52:30', 0, 1),
+(8, 'king', 'king.acquah@ashesi.edu.gh', '$2y$10$dKENxeQTvkO9k9RutVqTE.q/YEZ0hOQYaBjcuCNFXYv34UXXAB73S', 'King', 'Acquah', NULL, NULL, NULL, '2024-12-09 21:23:29', 0, 1),
+(9, 'Kiki', 'kiki@ashesi.edu.gh', '$2y$10$pOqlXir1HuECOLcJ406cZO3piV0x4UW6nEFaeg3rLq5cC8Rue9bkO', 'KAkua', 'Birago', NULL, NULL, NULL, '2024-12-09 22:32:29', 0, 1),
+(10, 'maame1', 'maame@asheci.com', '$2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu', 'Maame', 'Sarps', 'MIS', 'Coding', NULL, '2024-12-10 12:01:31', 0, 1),
+(11, 'kyekye', 'maamedanquah@gmai8l.com', '$2y$10$TW6.zBtbjc57Y4DqqeLcreO/tMytkku2DijGbwbTk03VoxkEkYmqK', 'Rabby', 'Danquah', NULL, NULL, NULL, '2024-12-10 20:52:14', 0, 1),
+(13, 'admin', 'admin@studybuddy.com', '$2y$10$tH7KWupLPCRY2n81Yvcceexv5wZCHGsEIEJXQ9sIBkXgMxCSnl7YG', 'admin', 'user', NULL, NULL, NULL, '2024-12-11 21:15:03', 1, 1),
+(14, 'pati1', 'pati@ashesi.edu.gh', '$2y$10$xtt4EkJQuF/phMHT.OvD/eiJ5.ciAWbkFld4qGbPYIX/ixv/NqMka', 'Pati', 'Dufie', NULL, NULL, NULL, '2024-12-12 16:21:57', 0, 1),
+(15, 'Zoie1', 'zoie@ashesi.edu.gh', '$2y$10$lIu/jCvSFN6b/LsFb0WdAObNjaernikRcRhz0f6TyDNeTf80En0i2', 'Zioe', 'Atta', NULL, NULL, NULL, '2024-12-12 16:31:51', 0, 1),
+(16, 'Naana', 'naana@gmail.com', '$2y$10$cvyhXjKhK3O3WFnFeIeYk.C.tUi6J0blGHkXUl48e.bV4LvKD/ZWa', 'Naana', 'Araba', NULL, NULL, NULL, '2024-12-12 16:33:46', 0, 1),
+(17, 'Clifford', 'clifford@ashesi.edu.gh', '$2y$10$wKq3pyvNJwZ.8zfrDbhGuuZCxzFRKkx/omjFoDcmn1cREbTSAOwAK', 'Clifford', 'System', NULL, NULL, NULL, '2024-12-12 16:37:59', 0, 1),
+(18, 'PrincessC', 'pricheryl10@gmail.com', '$2y$10$F0T1rqFtTx1MiSz5XWr4BOqk3taPPHD8aG3nxQcdqUIq5FcvRvVl.', 'Princess', 'Donkor', 'MIS', 'Coding', 'pexels-pixabay-301920.jpg', '2024-12-13 21:12:34', 0, 1);
 
 -- --------------------------------------------------------
 

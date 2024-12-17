@@ -1,9 +1,16 @@
 <?php  
 function get_db_connection() {
+    // Local connection
+    // $host = 'localhost';
+    // $dbname = 'webtech_fall2024_akua_amofa';
+    // $username = 'root';
+    // $password = '';
+
+    // Live connection
     $host = 'localhost';
     $dbname = 'webtech_fall2024_akua_amofa';
-    $username = 'root';
-    $password = '';
+    $username = 'akua.amofa';
+    $password = 'newtoMysql@2';
 
     try {
         $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";

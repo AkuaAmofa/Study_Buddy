@@ -204,3 +204,22 @@ body {
     color: var(--hover-blue);
 }
 
+textarea.input-place {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.file-input {
+    margin: 10px 0;
+}
+
+.file-input label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.file-input input[type="file"] {
+    width: 100%;
+    padding: 8px;
+}
+

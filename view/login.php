@@ -1,9 +1,13 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 session_start();
 require_once '../db/db.php';
 require_once '../db/logger.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    error_log("POST request received");
+    error_log("POST data: " . print_r($_POST, true));
     header('Content-Type: application/json');
     
     try {
@@ -11,8 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         $loginInput = trim($_POST['loginInput']);
         $password = $_POST['password'];
-
-        log_message("Login attempt for: " . $loginInput, 'DEBUG');
 
         if (empty($loginInput) || empty($password)) {
             echo json_encode(['success' => false, 'message' => 'All fields are required.']);
@@ -33,16 +35,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
         
-        log_message("Stored hash: " . $user['password'], 'DEBUG');
-        log_message("Verifying password for user: " . $user['username'], 'DEBUG');
-        
         if (password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['is_admin'] = (bool)$user['is_admin'];
             
-            $redirect = $_SESSION['is_admin'] ? '../admin/dashboard.php' : 'home.php';
+            $redirect = $_SESSION['is_admin'] ? '/admin/dashboard.php' : '/home.php';
             
             echo json_encode([
                 'success' => true,
@@ -50,20 +49,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'is_admin' => (bool)$user['is_admin']
             ]);
         } else {
-            log_message("Password verification failed for user: " . $user['username'], 'WARNING');
             echo json_encode(['success' => false, 'message' => 'Invalid email/username or password.']);
+            exit;
         }
     } catch (Exception $e) {
         log_message("Login error: " . $e->getMessage(), 'ERROR');
-        echo json_encode([
-            'success' => false, 
-            'message' => 'A server error occurred. Please try again later.'
-        ]);
+        echo json_encode(['success' => false, 'message' => 'A server error occurred. Please try again later.']);
+        exit;
     }
-    exit;
 }
-
-// Only show the HTML if it's not a POST request
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,15 +80,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <button class="header-btn active" id="loginBtn">Login</button>
                         <div id="btn"></div>
                     </div>
-                    <form id="LogIn" class="input" method="POST" action="login.php">
+                    <form id="LogIn" class="input" method="POST">
+                        <?php if (isset($_SESSION['signup_success'])): ?>
+                            <div class="success-message">
+                                <?php 
+                                echo htmlspecialchars($_SESSION['signup_success']); 
+                                unset($_SESSION['signup_success']); 
+                                ?>
+                            </div>
+                        <?php endif; ?>
                         <input type="text" class="input-place" name="loginInput" placeholder="Email or Username" required>
                         <input type="password" class="input-place" name="password" placeholder="Password" required>
-                        <div class="remember-forgot">
-                            <label>
-                                <input type="checkbox" class="check-box"> Remember me
-                            </label>
-                            <a href="#" class="forgot-password">Forgot Password?</a>
-                        </div>
                         <button type="submit" class="sumbit-btn">Login</button>
                         <div class="error-message" id="errorMessage"></div>
                     </form>
@@ -106,5 +102,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
     <script src="../assets/js/login.js" defer></script>
+    <script src="js/login.js" defer></script>
 </body>
 </html>

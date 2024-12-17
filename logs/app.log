@@ -1022,6 +1022,7 @@
 [2024-12-15 21:34:26] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2006] MySQL server has gone away
 [2024-12-15 21:34:26] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2006] MySQL server has gone away
 [2024-12-15 21:34:26] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2006] MySQL server has gone away
+<<<<<<< HEAD
 [2024-12-16 23:29:20] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [1049] Unknown database 'webtech_fall2024_akua_amofa'
 [2024-12-16 23:50:13] [DEBUG] Login attempt for: maame1
 [2024-12-16 23:50:13] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
@@ -1223,3 +1224,68 @@ Stack trace: #0 C:\xampp\htdocs\Study_Buddy\view\study-buddies.php(39): PDO->pre
 [2024-12-17 12:42:14] [DEBUG] Login attempt for: PrincessC
 [2024-12-17 12:42:14] [DEBUG] Stored hash: $2y$10$F0T1rqFtTx1MiSz5XWr4BOqk3taPPHD8aG3nxQcdqUIq5FcvRvVl.
 [2024-12-17 12:42:14] [DEBUG] Verifying password for user: PrincessC
+=======
+>>>>>>> ef3c54eefb0ac04cb510c7e87fad1493d655f436
+[2024-12-17 13:06:35] [DEBUG] Login attempt for: admin
+[2024-12-17 13:06:35] [DEBUG] Stored hash: $2y$10$tH7KWupLPCRY2n81Yvcceexv5wZCHGsEIEJXQ9sIBkXgMxCSnl7YG
+[2024-12-17 13:06:35] [DEBUG] Verifying password for user: admin
+[2024-12-17 13:15:29] [DEBUG] Login attempt for: admin
+[2024-12-17 13:15:29] [DEBUG] Stored hash: $2y$10$tH7KWupLPCRY2n81Yvcceexv5wZCHGsEIEJXQ9sIBkXgMxCSnl7YG
+[2024-12-17 13:15:29] [DEBUG] Verifying password for user: admin
+[2024-12-17 13:15:29] [WARNING] Password verification failed for user: admin
+[2024-12-17 13:15:36] [DEBUG] Login attempt for: admin
+[2024-12-17 13:15:36] [DEBUG] Stored hash: $2y$10$tH7KWupLPCRY2n81Yvcceexv5wZCHGsEIEJXQ9sIBkXgMxCSnl7YG
+[2024-12-17 13:15:36] [DEBUG] Verifying password for user: admin
+[2024-12-17 13:15:51] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-17 13:15:57] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-17 13:16:00] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-17 13:16:04] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-17 13:16:33] [DEBUG] Login attempt for: maame1
+[2024-12-17 13:16:33] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-17 13:16:33] [DEBUG] Verifying password for user: maame1
+[2024-12-17 13:17:31] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-17 13:17:39] [DEBUG] Login attempt for: admin
+[2024-12-17 13:17:39] [DEBUG] Stored hash: $2y$10$tH7KWupLPCRY2n81Yvcceexv5wZCHGsEIEJXQ9sIBkXgMxCSnl7YG
+[2024-12-17 13:17:39] [DEBUG] Verifying password for user: admin
+[2024-12-17 13:21:24] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-17 13:24:47] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-17 13:24:48] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-17 13:30:31] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-17 13:30:32] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-17 13:30:34] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-17 13:30:35] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-17 13:30:35] [ERROR] Error in admin users page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'field list'
+[2024-12-17 13:34:27] [ERROR] Error in admin users page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 13:35:10] [ERROR] Error in admin users page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 13:35:11] [ERROR] Error in admin users page: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 13:55:19] [ERROR] Error deleting user: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_id' in 'where clause'
+[2024-12-17 14:36:51] [INFO] Resource uploaded successfully: sliod'8g
+[2024-12-17 14:38:08] [INFO] Resource deleted successfully: ID 9
+[2024-12-17 14:41:18] [DEBUG] Login attempt for: maame1
+[2024-12-17 14:41:18] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-17 14:41:18] [DEBUG] Verifying password for user: maame1
+[2024-12-17 14:41:36] [DEBUG] Login attempt for: maame1
+[2024-12-17 14:41:36] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-17 14:41:36] [DEBUG] Verifying password for user: maame1
+[2024-12-17 14:44:00] [DEBUG] Login attempt for: maame1
+[2024-12-17 14:44:00] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-17 14:44:00] [DEBUG] Verifying password for user: maame1
+[2024-12-17 14:44:02] [DEBUG] Login attempt for: maame1
+[2024-12-17 14:44:02] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-17 14:44:02] [DEBUG] Verifying password for user: maame1
+[2024-12-17 14:45:32] [DEBUG] Login attempt for: maame1
+[2024-12-17 14:45:32] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-17 14:45:32] [DEBUG] Verifying password for user: maame1
+[2024-12-17 14:45:33] [DEBUG] Login attempt for: maame1
+[2024-12-17 14:45:33] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-17 14:45:33] [DEBUG] Verifying password for user: maame1
+[2024-12-17 14:49:20] [DEBUG] Login attempt for: maame1
+[2024-12-17 14:49:20] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-17 14:49:20] [DEBUG] Verifying password for user: maame1
+[2024-12-17 15:00:41] [INFO] Study buddy request sent from user 22 to user 18
+[2024-12-17 15:01:37] [INFO] Resource uploaded successfully: Test
+[2024-12-17 15:02:06] [INFO] Resource uploaded successfully: Test454
+[2024-12-17 15:02:42] [INFO] Study buddy request Accepted for connection ID: 22
+[2024-12-17 15:07:12] [ERROR] Error in study buddies page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.profile_picture' in 'field list'
+[2024-12-17 15:07:19] [ERROR] Error in study buddies page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.profile_picture' in 'field list'
+[2024-12-17 15:10:58] [ERROR] Chat error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.profile_picture' in 'field list'

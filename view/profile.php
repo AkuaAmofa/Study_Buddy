@@ -24,8 +24,7 @@ try {
             first_name, 
             last_name, 
             major, 
-            interests, 
-            profile_picture 
+            interests 
         FROM users 
         WHERE user_id = :user_id
     ");
@@ -83,9 +82,6 @@ try {
         <?php endif; ?>
 
         <form method="POST">
-            <div class="profile-picture">
-                <img src="<?php echo htmlspecialchars($user_data['profile_picture'] ?? '../assets/images/default-avatar.png'); ?>" alt="Profile Picture">
-            </div>
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" value="<?php echo htmlspecialchars($user_data['username']); ?>" disabled>

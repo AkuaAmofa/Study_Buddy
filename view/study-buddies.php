@@ -11,9 +11,6 @@ $success_message = '';
 $recommended_users = []; // Initialize as empty array
 $connections = []; // Initialize as empty array
 
-// Update the profile picture path to use the correct default image path
-$default_profile_img = '/Study_Buddy/assets/images/default-profile.png'; // Adjust this path to match your project structure
-
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
@@ -25,41 +22,6 @@ try {
     // Debug: Check if connection is successful
     if (!$conn) {
         throw new Exception("Database connection failed");
-    }
-    
-    // Simplified connections query
-    $conn_stmt = $conn->prepare("
-        SELECT 
-            u.user_id,
-            u.username,
-            u.first_name,
-            u.last_name,
-            u.major,
-            u.interests,
-            c.matched_at,
-            c.status as connection_status
-        FROM users u
-        JOIN studybuddyconnections c ON 
-            (c.user_id1 = u.user_id AND c.user_id2 = ?)
-            OR (c.user_id2 = u.user_id AND c.user_id1 = ?)
-        WHERE c.status = 'Accepted'
-        AND u.user_id != ?
-        ORDER BY c.matched_at DESC
-    ");
-    
-    $conn_stmt->execute([
-        $_SESSION['user_id'], 
-        $_SESSION['user_id'],
-        $_SESSION['user_id']
-    ]);
-    $connections = $conn_stmt->fetchAll(PDO::FETCH_ASSOC);
-    
-    // Add debug logging
-    error_log("User ID: " . $_SESSION['user_id']);
-    error_log("Connections query executed");
-    error_log("Number of connections found: " . count($connections));
-    foreach ($connections as $connection) {
-        error_log("Connection found: " . print_r($connection, true));
     }
     
     // Simplified recommended users query
@@ -106,7 +68,6 @@ try {
             u.last_name,
             u.major,
             u.interests,
-            u.profile_picture,
             c.status,
             CASE WHEN c.user_id1 = ? THEN 1 ELSE 0 END as is_sender
         FROM users u
@@ -361,42 +322,6 @@ ob_start();
             <?php echo htmlspecialchars($error_message); ?>
         </div>
     <?php endif; ?>
-
-    <!-- Your Study Buddies Section -->
-    <section class="network-section">
-        <h2><i class='bx bx-group'></i> Your Study Buddies</h2>
-        <div class="user-grid">
-            <?php if (empty($connections)): ?>
-                <div class="empty-state">
-                    <i class='bx bx-user-circle'></i>
-                    <p>You haven't connected with any study buddies yet.</p>
-                    <p>Start by sending connection requests to fellow students!</p>
-                </div>
-            <?php else: ?>
-                <?php foreach ($recommended_users as $user): ?>
-                    <div class="user-card">
-                        <div class="user-card-body">
-                            <h3><?php echo htmlspecialchars($user['first_name'] . ' ' . $user['last_name']); ?></h3>
-                            <div class="user-info">
-                                <i class='bx bx-book'></i>
-                                <span><?php echo htmlspecialchars($user['major'] ?? 'Major not specified'); ?></span>
-                            </div>
-                            <div class="user-info">
-                                <i class='bx bx-envelope'></i>
-                                <span><?php echo htmlspecialchars($user['email']); ?></span>
-                            </div>
-                        </div>
-                        <div class="user-card-footer">
-                            <button onclick="startChat(<?php echo $user['user_id']; ?>)" 
-                                    class="connect-button connected">
-                                <i class='bx bx-message-square-dots'></i> Message
-                            </button>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php endif; ?>
-        </div>
-    </section>
 
     <!-- Recommended Study Buddies Section -->
     <section class="network-section">
