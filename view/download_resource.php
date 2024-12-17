@@ -42,19 +42,36 @@ try {
         throw new Exception('File not found');
     }
 
+    // Get MIME type
+    $mime_type = mime_content_type($file_path);
+
+    // Clean the filename
+    $clean_filename = preg_replace('/[^a-zA-Z0-9_.-]/', '_', $resource['title']);
+    $file_extension = pathinfo($resource['file_path'], PATHINFO_EXTENSION);
+    $download_filename = $clean_filename . '.' . $file_extension;
+
     // Set headers for download
-    header('Content-Type: application/octet-stream');
-    header('Content-Disposition: attachment; filename="' . $resource['title'] . '.' . $resource['file_type'] . '"');
+    header('Content-Type: ' . $mime_type);
+    header('Content-Disposition: attachment; filename="' . $download_filename . '"');
     header('Content-Length: ' . filesize($file_path));
+    header('Cache-Control: no-cache, must-revalidate');
+    header('Pragma: public');
+    header('Expires: 0');
+
+    // Clear output buffer
+    ob_clean();
+    flush();
 
     // Output file
     readfile($file_path);
     
+    // Log the download
     log_message("Resource downloaded: {$resource['title']}", 'INFO');
     exit();
 
 } catch (Exception $e) {
     log_message("Error downloading resource: " . $e->getMessage(), 'ERROR');
-    header('Location: resources.php?error=' . urlencode($e->getMessage()));
+    echo "Error: " . $e->getMessage();
     exit();
-} 
+}
+?> 

@@ -222,64 +222,7 @@ ob_start();
     </div>
 </div>
 
-<script>
-let searchTimeout;
-
-function handleSearch(value) {
-    clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(() => {
-        window.location.href = `?search=${encodeURIComponent(value)}`;
-    }, 500);
-}
-
-function toggleUserStatus(userId) {
-    if (!confirm('Are you sure you want to change this user\'s status?')) return;
-    
-    fetch('toggle_user_status.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ user_id: userId })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            location.reload();
-        } else {
-            alert('Error: ' + data.message);
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred while updating user status');
-    });
-}
-
-function resetPassword(userId) {
-    if (!confirm('Are you sure you want to reset this user\'s password?')) return;
-    
-    fetch('reset_password.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ user_id: userId })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Password has been reset and sent to user\'s email');
-        } else {
-            alert('Error: ' + data.message);
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred while resetting password');
-    });
-}
-</script>
+<script src="js/admin_users.js" defer></script>
 
 <?php
 $content = ob_get_clean();

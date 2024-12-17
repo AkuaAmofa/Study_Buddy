@@ -32,6 +32,17 @@ try {
     $stmt->execute([$_SESSION['user_id']]);
     $assignments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    // Get count of pending buddy requests
+    $stmt = $conn->prepare("
+        SELECT COUNT(*) as pending_count
+        FROM studybuddyconnections
+        WHERE user_id2 = ?
+        AND status = 'Pending'
+    ");
+    $stmt->execute([$_SESSION['user_id']]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $pending_count = $result['pending_count'];
+
 } catch (Exception $e) {
     log_message("Error in home page: " . $e->getMessage(), 'ERROR');
     $error_message = "An error occurred while loading the dashboard.";
@@ -41,7 +52,20 @@ ob_start();
 ?>
 
 <div class="dashboard-container">
-    <h1>Welcome, <?php echo htmlspecialchars($first_name); ?>!</h1>
+    <div class="dashboard-header">
+        <div class="welcome-section">
+            <h1>Welcome, <?php echo htmlspecialchars($user['first_name']); ?>!</h1>
+            <p class="subtitle">Track your progress and connect with study buddies</p>
+        </div>
+        <div class="notification-badge">
+            <a href="notifications.php" class="notification-link">
+                <i class='bx bx-bell'></i>
+                <?php if ($pending_count > 0): ?>
+                    <span class="badge"><?php echo $pending_count; ?></span>
+                <?php endif; ?>
+            </a>
+        </div>
+    </div>
     
     <div class="action-buttons">
         <a href="assignments.php" class="action-button">
@@ -272,6 +296,43 @@ ob_start();
         width: 100%;
         justify-content: center;
     }
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.notification-badge {
+    position: relative;
+}
+
+.notification-link {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.notification-link:hover {
+    background-color: var(--background-color);
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+    min-width: 1.5rem;
+    text-align: center;
 }
 </style>
 

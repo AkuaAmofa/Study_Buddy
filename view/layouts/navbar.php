@@ -40,10 +40,6 @@
                         <i class='bx bx-user'></i>
                         <span>My Profile</span>
                     </a>
-                    <a href="settings.php">
-                        <i class='bx bx-cog'></i>
-                        <span>Settings</span>
-                    </a>
                     <a href="logout.php" class="logout">
                         <i class='bx bx-log-out'></i>
                         <span>Logout</span>

@@ -1,5 +1,18 @@
-/* Import base variables */
-@import 'home.css';
+/* Base variables */
+:root {
+    --base-spacing: 1rem;
+    --small-spacing: 0.5rem;
+    --large-spacing: 2rem;
+    --text-color: #333;
+    --muted-text: #666;
+    --primary-color: #2196F3;
+    --secondary-color: #1976D2;
+    --accent-color: #4CAF50;
+    --background-color: #f8f9fa;
+    --light-text-color: #fff;
+    --card-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
 
 /* Study Network Layout */
 .study-network {

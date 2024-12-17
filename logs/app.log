@@ -1000,3 +1000,226 @@
 [2024-12-14 18:01:37] [DEBUG] Verifying password for user: PrincessC
 [2024-12-14 18:02:05] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number
 [2024-12-14 18:02:11] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-15 00:18:08] [DEBUG] Login attempt for: maame1
+[2024-12-15 00:18:08] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-15 00:18:08] [DEBUG] Verifying password for user: maame1
+[2024-12-15 00:18:56] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-15 00:19:07] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-15 01:22:57] [INFO] Assignment deleted: Webtech Final Project
+[2024-12-15 01:23:13] [INFO] Assignment ID: 4 status updated to: In Progress
+[2024-12-15 01:23:49] [INFO] New assignment created: Webtech Final by user ID: 10
+[2024-12-15 01:24:00] [INFO] Assignment updated: Leadership Reflection
+[2024-12-15 01:24:05] [INFO] Assignment ID: 6 status updated to: In Progress
+[2024-12-15 01:24:17] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-15 01:24:23] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-15 21:29:34] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2024-12-15 21:29:36] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2024-12-15 21:29:37] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2024-12-15 21:29:37] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2024-12-15 21:34:26] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2024-12-15 21:34:26] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2024-12-15 21:34:26] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2024-12-15 21:34:26] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2024-12-15 21:34:26] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2024-12-15 21:34:26] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [2006] MySQL server has gone away
+[2024-12-16 23:29:20] [ERROR] Login error: Connection failed: SQLSTATE[HY000] [1049] Unknown database 'webtech_fall2024_akua_amofa'
+[2024-12-16 23:50:13] [DEBUG] Login attempt for: maame1
+[2024-12-16 23:50:13] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-16 23:50:13] [DEBUG] Verifying password for user: maame1
+[2024-12-16 23:50:26] [DEBUG] Login attempt for: maame1
+[2024-12-16 23:50:26] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-16 23:50:26] [DEBUG] Verifying password for user: maame1
+[2024-12-16 23:52:23] [DEBUG] Login attempt for: maame1
+[2024-12-16 23:52:23] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-16 23:52:23] [DEBUG] Verifying password for user: maame1
+[2024-12-16 23:52:37] [DEBUG] Login attempt for: maame1
+[2024-12-16 23:52:37] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-16 23:52:37] [DEBUG] Verifying password for user: maame1
+[2024-12-16 23:53:26] [DEBUG] Login attempt for: maame1
+[2024-12-16 23:53:26] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-16 23:53:26] [DEBUG] Verifying password for user: maame1
+[2024-12-16 23:57:50] [DEBUG] Login attempt for: maame1
+[2024-12-16 23:57:50] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-16 23:57:50] [DEBUG] Verifying password for user: maame1
+[2024-12-16 23:58:51] [DEBUG] Login attempt for: maame1
+[2024-12-16 23:58:51] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-16 23:58:51] [DEBUG] Verifying password for user: maame1
+[2024-12-16 23:59:26] [INFO] Assignment ID: 4 status updated to: In Progress
+[2024-12-16 23:59:49] [DEBUG] Login attempt for: maame1
+[2024-12-16 23:59:49] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-16 23:59:49] [DEBUG] Verifying password for user: maame1
+[2024-12-17 00:31:55] [ERROR] Error downloading resource: File not found
+[2024-12-17 00:32:01] [ERROR] Error downloading resource: File not found
+[2024-12-17 00:32:02] [ERROR] Error downloading resource: File not found
+[2024-12-17 00:32:03] [ERROR] Error downloading resource: File not found
+[2024-12-17 00:32:04] [ERROR] Error downloading resource: File not found
+[2024-12-17 00:34:40] [ERROR] Error downloading resource: File not found
+[2024-12-17 00:34:41] [ERROR] Error downloading resource: File not found
+[2024-12-17 00:34:43] [ERROR] Error downloading resource: File not found
+[2024-12-17 00:34:44] [ERROR] Error downloading resource: File not found
+[2024-12-17 00:34:46] [ERROR] Error downloading resource: File not found
+[2024-12-17 00:47:38] [INFO] Assignment ID: 4 status updated to: Completed
+[2024-12-17 00:47:43] [INFO] Assignment ID: 4 status updated to: Not Started
+[2024-12-17 00:47:46] [INFO] Assignment ID: 4 status updated to: Completed
+[2024-12-17 00:48:04] [INFO] Study buddy request sent from user 10 to user 18
+[2024-12-17 00:48:09] [INFO] Study buddy request sent from user 10 to user 16
+[2024-12-17 00:49:15] [INFO] Assignment updated: Leadership Reflection
+[2024-12-17 00:51:01] [INFO] Assignment ID: 4 status updated to: In Progress
+[2024-12-17 00:51:05] [INFO] Assignment ID: 4 status updated to: Completed
+[2024-12-17 00:51:08] [INFO] Assignment ID: 4 status updated to: In Progress
+[2024-12-17 00:51:13] [INFO] Study buddy request sent from user 10 to user 14
+[2024-12-17 00:51:26] [INFO] Study buddy request sent from user 10 to user 8
+[2024-12-17 00:53:17] [ERROR] Error downloading resource: File not found
+[2024-12-17 00:56:30] [ERROR] Error downloading resource: File not found
+[2024-12-17 00:56:32] [ERROR] Error downloading resource: File not found
+[2024-12-17 00:56:33] [ERROR] Error downloading resource: File not found
+[2024-12-17 01:02:54] [ERROR] Error downloading resource: File not found
+[2024-12-17 01:06:14] [ERROR] Error downloading resource: File not found
+[2024-12-17 01:06:24] [ERROR] Error downloading resource: File not found
+[2024-12-17 01:07:38] [ERROR] Error downloading resource: File not found
+[2024-12-17 01:07:50] [ERROR] Error downloading resource: File not found
+[2024-12-17 01:07:50] [ERROR] Error downloading resource: File not found
+[2024-12-17 01:09:44] [ERROR] Error downloading resource: File not found
+[2024-12-17 01:10:25] [ERROR] Error downloading resource: File not found
+[2024-12-17 01:12:07] [ERROR] Error downloading resource: File not found
+[2024-12-17 01:12:16] [ERROR] Error downloading resource: File not found
+[2024-12-17 01:12:31] [ERROR] Error downloading resource: File not found
+[2024-12-17 01:13:02] [ERROR] Error downloading resource: File not found
+[2024-12-17 01:13:53] [INFO] Resource uploaded successfully: test
+[2024-12-17 01:13:58] [INFO] Resource downloaded: test
+[2024-12-17 01:34:34] [INFO] Resource uploaded successfully: gyudf
+[2024-12-17 01:34:41] [INFO] Resource downloaded: gyudf
+[2024-12-17 01:34:45] [INFO] Resource downloaded: gyudf
+[2024-12-17 01:39:28] [INFO] Resource uploaded successfully: gb
+[2024-12-17 01:45:05] [INFO] Resource uploaded successfully: k/
+[2024-12-17 02:01:41] [INFO] Resource deleted successfully: ID 7
+[2024-12-17 02:01:57] [INFO] Resource deleted successfully: ID 6
+[2024-12-17 02:12:48] [INFO] Study buddy request sent from user 10 to user 17
+[2024-12-17 02:12:52] [INFO] Study buddy request sent from user 10 to user 11
+[2024-12-17 02:12:56] [INFO] Study buddy request sent from user 10 to user 2
+[2024-12-17 02:31:19] [ERROR] Error in study buddies page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.role' in 'where clause'
+[2024-12-17 02:35:43] [ERROR] Error in study buddies page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.role' in 'where clause'
+[2024-12-17 02:35:44] [ERROR] Error in study buddies page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.role' in 'where clause'
+[2024-12-17 02:38:12] [ERROR] Error in study buddies page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.role' in 'where clause'
+[2024-12-17 02:38:13] [ERROR] Error in study buddies page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.role' in 'where clause'
+[2024-12-17 02:42:23] [ERROR] Error in study buddies page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.role' in 'where clause'
+[2024-12-17 02:44:30] [DEBUG] Starting to fetch study buddies for user: 10
+[2024-12-17 02:44:30] [ERROR] Error in study buddies page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.role' in 'where clause'
+Stack trace: #0 C:\xampp\htdocs\Study_Buddy\view\study-buddies.php(39): PDO->prepare('\r\n        SELEC...')
+#1 {main}
+[2024-12-17 02:46:37] [ERROR] Error in study buddies page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'role' in 'field list'
+[2024-12-17 02:46:38] [ERROR] Error in study buddies page: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'role' in 'field list'
+[2024-12-17 02:53:27] [ERROR] Error sending study buddy request: Connection already exists
+[2024-12-17 02:53:30] [ERROR] Error sending study buddy request: Connection already exists
+[2024-12-17 02:54:02] [DEBUG] Login attempt for: PrincessC
+[2024-12-17 02:54:02] [DEBUG] Stored hash: $2y$10$F0T1rqFtTx1MiSz5XWr4BOqk3taPPHD8aG3nxQcdqUIq5FcvRvVl.
+[2024-12-17 02:54:02] [DEBUG] Verifying password for user: PrincessC
+[2024-12-17 02:54:02] [WARNING] Password verification failed for user: PrincessC
+[2024-12-17 02:54:10] [DEBUG] Login attempt for: PrincessC
+[2024-12-17 02:54:10] [DEBUG] Stored hash: $2y$10$F0T1rqFtTx1MiSz5XWr4BOqk3taPPHD8aG3nxQcdqUIq5FcvRvVl.
+[2024-12-17 02:54:10] [DEBUG] Verifying password for user: PrincessC
+[2024-12-17 02:54:21] [ERROR] Error sending study buddy request: Connection already exists
+[2024-12-17 02:58:21] [DEBUG] Login attempt for: maame1
+[2024-12-17 02:58:21] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-17 02:58:21] [DEBUG] Verifying password for user: maame1
+[2024-12-17 02:58:30] [INFO] Assignment ID: 4 status updated to: Completed
+[2024-12-17 02:58:38] [INFO] Assignment ID: 4 status updated to: In Progress
+[2024-12-17 02:59:25] [INFO] Resource uploaded successfully: iube
+[2024-12-17 02:59:35] [INFO] Resource deleted successfully: ID 8
+[2024-12-17 03:01:14] [ERROR] Error sending study buddy request: Connection already exists
+[2024-12-17 03:01:16] [INFO] Study buddy request sent from user 10 to user 15
+[2024-12-17 03:03:50] [DEBUG] Login attempt for: maame1
+[2024-12-17 03:03:50] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-17 03:03:50] [DEBUG] Verifying password for user: maame1
+[2024-12-17 03:11:24] [INFO] Study buddy request sent from user 10 to user 3
+[2024-12-17 03:11:32] [INFO] Study buddy request sent from user 10 to user 7
+[2024-12-17 03:11:33] [INFO] Study buddy request sent from user 10 to user 1
+[2024-12-17 03:11:34] [INFO] Study buddy request sent from user 10 to user 6
+[2024-12-17 03:11:37] [INFO] Study buddy request sent from user 10 to user 5
+[2024-12-17 03:11:39] [INFO] Study buddy request sent from user 10 to user 9
+[2024-12-17 03:11:41] [INFO] Study buddy request sent from user 10 to user 4
+[2024-12-17 03:14:07] [DEBUG] Login attempt for: PrincessC
+[2024-12-17 03:14:07] [DEBUG] Stored hash: $2y$10$F0T1rqFtTx1MiSz5XWr4BOqk3taPPHD8aG3nxQcdqUIq5FcvRvVl.
+[2024-12-17 03:14:07] [DEBUG] Verifying password for user: PrincessC
+[2024-12-17 03:14:15] [INFO] Study buddy request sent from user 18 to user 3
+[2024-12-17 03:17:55] [INFO] Study buddy request sent from user 18 to user 2
+[2024-12-17 03:31:07] [DEBUG] Login attempt for: Asohh
+[2024-12-17 03:31:07] [DEBUG] Stored hash: $2y$10$5foZHM9k1FWC.XulVLhHK.vpbWTfs.zqxKwks7AjHYHSx/a.cXDTC
+[2024-12-17 03:31:07] [DEBUG] Verifying password for user: asohh
+[2024-12-17 03:31:19] [INFO] Study buddy request sent from user 20 to user 18
+[2024-12-17 03:31:38] [DEBUG] Login attempt for: PrincessC
+[2024-12-17 03:31:38] [DEBUG] Stored hash: $2y$10$F0T1rqFtTx1MiSz5XWr4BOqk3taPPHD8aG3nxQcdqUIq5FcvRvVl.
+[2024-12-17 03:31:38] [DEBUG] Verifying password for user: PrincessC
+[2024-12-17 03:32:21] [INFO] Study buddy request sent from user 18 to user 14
+[2024-12-17 03:32:24] [INFO] Study buddy request sent from user 18 to user 17
+[2024-12-17 03:40:29] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:40:42] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:41:14] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:42:36] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:42:37] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:42:38] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:46:44] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:50:22] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:50:25] [ERROR] Error handling buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:50:28] [ERROR] Error handling buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:52:02] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:52:03] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:52:04] [ERROR] Error handling buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:52:49] [ERROR] Error handling buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:53:01] [ERROR] Error handling buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:55:00] [ERROR] Error in notifications: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sbc.created_at' in 'field list'
+[2024-12-17 03:57:09] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:57:12] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:57:13] [ERROR] Error handling buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:59:05] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:59:06] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 03:59:07] [ERROR] Error handling buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:26:17] [DEBUG] Login attempt for: maame1
+[2024-12-17 11:26:17] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-17 11:26:17] [DEBUG] Verifying password for user: maame1
+[2024-12-17 11:26:24] [INFO] Study buddy request sent from user 10 to user 20
+[2024-12-17 11:26:44] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:33:22] [DEBUG] Login attempt for: maame1
+[2024-12-17 11:33:22] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-17 11:33:22] [DEBUG] Verifying password for user: maame1
+[2024-12-17 11:35:21] [DEBUG] Login attempt for: PrincessC
+[2024-12-17 11:35:21] [DEBUG] Stored hash: $2y$10$F0T1rqFtTx1MiSz5XWr4BOqk3taPPHD8aG3nxQcdqUIq5FcvRvVl.
+[2024-12-17 11:35:21] [DEBUG] Verifying password for user: PrincessC
+[2024-12-17 11:36:09] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:36:26] [ERROR] Error handling buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:40:21] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:40:22] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:40:26] [ERROR] Error handling buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:43:13] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:43:18] [ERROR] Error handling buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:43:34] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:44:05] [ERROR] Error handling buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:50:56] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:51:03] [ERROR] Error handling buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:54:48] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:54:52] [ERROR] Error handling buddy request: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:58:12] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:58:52] [INFO] Study buddy request Accepted for connection ID: 1
+[2024-12-17 11:58:52] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:59:06] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 11:59:07] [ERROR] Error in notifications: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 12:11:25] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 12:11:58] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 12:11:59] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 12:12:00] [ERROR] Chat error: SQLSTATE[HY093]: Invalid parameter number
+[2024-12-17 12:12:40] [DEBUG] Login attempt for: maame1
+[2024-12-17 12:12:40] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-17 12:12:40] [DEBUG] Verifying password for user: maame1
+[2024-12-17 12:23:34] [DEBUG] Login attempt for: maame1
+[2024-12-17 12:23:34] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-17 12:23:34] [DEBUG] Verifying password for user: maame1
+[2024-12-17 12:23:53] [DEBUG] Login attempt for: PrincessC
+[2024-12-17 12:23:53] [DEBUG] Stored hash: $2y$10$F0T1rqFtTx1MiSz5XWr4BOqk3taPPHD8aG3nxQcdqUIq5FcvRvVl.
+[2024-12-17 12:23:53] [DEBUG] Verifying password for user: PrincessC
+[2024-12-17 12:24:02] [INFO] Study buddy request Rejected for connection ID: 18
+[2024-12-17 12:41:33] [DEBUG] Login attempt for: maame1
+[2024-12-17 12:41:33] [DEBUG] Stored hash: $2y$10$tky/sMio54QMrV4WOM/WfeQ5KefgYrnKXWKdTZ6tDZ.RrPyhkL7yu
+[2024-12-17 12:41:33] [DEBUG] Verifying password for user: maame1
+[2024-12-17 12:42:14] [DEBUG] Login attempt for: PrincessC
+[2024-12-17 12:42:14] [DEBUG] Stored hash: $2y$10$F0T1rqFtTx1MiSz5XWr4BOqk3taPPHD8aG3nxQcdqUIq5FcvRvVl.
+[2024-12-17 12:42:14] [DEBUG] Verifying password for user: PrincessC
